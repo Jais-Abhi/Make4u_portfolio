@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export function ServicesOverview() {
@@ -69,9 +70,9 @@ export function ServicesOverview() {
         {/* 6-Card Services Grid (3x2) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
           {services.map((svc, idx) => (
-            <a
+            <Link
               key={idx}
-              href="#contact"
+              href="/services"
               className="group flex flex-col justify-between p-space-xl rounded-lg bg-surface-container border border-outline-variant hover:border-primary-container hover:-translate-y-1 transition-all duration-300 shadow-sm"
             >
               <div className="flex flex-col">
@@ -95,7 +96,7 @@ export function ServicesOverview() {
                   Explore Specs →
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

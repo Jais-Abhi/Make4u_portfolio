@@ -2,11 +2,19 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
+  const isServices = pathname === "/services";
+  const isMaintenance =
+    pathname === "/maintenance-plans" ||
+    pathname === "/services/maintenance-plans";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
@@ -29,46 +37,58 @@ export function Navbar() {
         <nav className="hidden lg:flex items-center gap-space-lg">
           <Link
             href="/"
-            className="transition-colors text-primary-container font-semibold"
+            className={`transition-colors ${
+              isHome
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
+            }`}
           >
             Home
           </Link>
-          <a
-            href="#about"
+          <Link
+            href="/#about"
             className="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg"
           >
             About
-          </a>
-          <a
-            href="#services"
-            className="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg"
+          </Link>
+          <Link
+            href="/services"
+            className={`transition-colors ${
+              isServices
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
+            }`}
           >
             Services
-          </a>
-          <a
-            href="#services"
-            className="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg"
+          </Link>
+          <Link
+            href="/maintenance-plans"
+            className={`transition-colors ${
+              isMaintenance
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
+            }`}
           >
             Maintenance Plans
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/#contact"
             className="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg"
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Right Actions: Theme Toggle & CTA */}
         <div className="flex items-center gap-3 shrink-0">
           <ThemeToggle />
 
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:brightness-105 active:scale-95 transition-all shadow-sm"
           >
             Get a Quote
-          </a>
+          </Link>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -92,46 +112,58 @@ export function Navbar() {
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-primary-container font-semibold py-2"
+            className={`py-2 ${
+              isHome
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-medium"
+            }`}
           >
             Home
           </Link>
-          <a
-            href="#about"
+          <Link
+            href="/#about"
             onClick={() => setMobileMenuOpen(false)}
             className="text-on-surface-variant hover:text-on-surface py-2 font-medium"
           >
             About
-          </a>
-          <a
-            href="#services"
+          </Link>
+          <Link
+            href="/services"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-on-surface-variant hover:text-on-surface py-2 font-medium"
+            className={`py-2 ${
+              isServices
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-medium"
+            }`}
           >
             Services
-          </a>
-          <a
-            href="#services"
+          </Link>
+          <Link
+            href="/maintenance-plans"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-on-surface-variant hover:text-on-surface py-2 font-medium"
+            className={`py-2 ${
+              isMaintenance
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-medium"
+            }`}
           >
             Maintenance Plans
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/#contact"
             onClick={() => setMobileMenuOpen(false)}
             className="text-on-surface-variant hover:text-on-surface py-2 font-medium"
           >
             Contact
-          </a>
+          </Link>
           <div className="pt-2">
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center py-2.5 rounded-lg bg-primary-container text-on-primary-fixed font-semibold"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
         </div>
       )}
