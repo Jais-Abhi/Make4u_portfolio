@@ -11,6 +11,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   const isHome = pathname === "/";
+  const isAbout = pathname === "/about";
   const isServices = pathname === "/services";
   const isMaintenance =
     pathname === "/maintenance-plans" ||
@@ -46,8 +47,12 @@ export function Navbar() {
             Home
           </Link>
           <Link
-            href="/#about"
-            className="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg"
+            href="/about"
+            className={`transition-colors ${
+              isAbout
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
+            }`}
           >
             About
           </Link>
@@ -121,9 +126,13 @@ export function Navbar() {
             Home
           </Link>
           <Link
-            href="/#about"
+            href="/about"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-on-surface-variant hover:text-on-surface py-2 font-medium"
+            className={`py-2 ${
+              isAbout
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-medium"
+            }`}
           >
             About
           </Link>
