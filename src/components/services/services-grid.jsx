@@ -150,7 +150,7 @@ export function ServicesGrid() {
               {/* Bottom Action Button */}
               <div className="pt-8 mt-6">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/40 text-primary font-label-md text-label-md group-hover:bg-primary-container group-hover:text-on-primary-fixed transition-all shadow-sm"
                 >
                   <span>{service.ctaText}</span>

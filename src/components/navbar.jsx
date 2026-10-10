@@ -16,6 +16,7 @@ export function Navbar() {
   const isMaintenance =
     pathname === "/maintenance-plans" ||
     pathname === "/services/maintenance-plans";
+  const isContact = pathname === "/contact";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
@@ -77,8 +78,12 @@ export function Navbar() {
             Maintenance Plans
           </Link>
           <Link
-            href="/#contact"
-            className="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg"
+            href="/contact"
+            className={`transition-colors ${
+              isContact
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
+            }`}
           >
             Contact
           </Link>
@@ -89,7 +94,7 @@ export function Navbar() {
           <ThemeToggle />
 
           <Link
-            href="/#contact"
+            href="/contact"
             className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:brightness-105 active:scale-95 transition-all shadow-sm"
           >
             Get a Quote
@@ -159,15 +164,19 @@ export function Navbar() {
             Maintenance Plans
           </Link>
           <Link
-            href="/#contact"
+            href="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-on-surface-variant hover:text-on-surface py-2 font-medium"
+            className={`py-2 ${
+              isContact
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-medium"
+            }`}
           >
             Contact
           </Link>
           <div className="pt-2">
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center py-2.5 rounded-lg bg-primary-container text-on-primary-fixed font-semibold"
             >

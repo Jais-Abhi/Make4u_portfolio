@@ -47,39 +47,39 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#about"
+                <Link
+                  href="/about"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/maintenance-plans"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Maintenance Plans
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -92,57 +92,57 @@ export function Footer() {
             <ul className="flex flex-col gap-space-sm font-body-sm text-body-sm">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Website Development
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   App Development
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   SEO &amp; Digital Growth
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Graphic Design &amp; Video Editing
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Photography &amp; Videography
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <a
-                  href="#services"
+                <Link
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   AI &amp; Business Integration
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
