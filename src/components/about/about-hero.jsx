@@ -1,3 +1,5 @@
+import { Zap } from "lucide-react";
+
 export function AboutHero() {
   return (
     <section className="relative w-full max-w-7xl mx-auto px-gutter pt-space-xl pb-space-xl overflow-hidden">
@@ -73,9 +75,7 @@ export function AboutHero() {
 
           <div className="px-space-lg py-space-md bg-surface-container-low rounded-xl flex items-center justify-between shadow-sm">
             <div className="flex items-center gap-space-sm">
-              <span className="material-symbols-outlined text-primary-container text-xl">
-                bolt
-              </span>
+              <Zap className="h-4 w-4 text-primary-container" />
               <span className="font-label-sm text-label-sm text-secondary uppercase tracking-wider">
                 No bloat. No jargon. Pure execution.
               </span>

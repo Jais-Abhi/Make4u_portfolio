@@ -1,7 +1,9 @@
+import { Terminal, Film, Network } from "lucide-react";
+
 const pillars = [
   {
     num: "01",
-    icon: "terminal",
+    Icon: Terminal,
     title: "Build",
     desc: "Websites, applications, landing pages, and digital tools built for speed and conversion.",
     bullets: [
@@ -12,7 +14,7 @@ const pillars = [
   },
   {
     num: "02",
-    icon: "movie_edit",
+    Icon: Film,
     title: "Create",
     desc: "High-fidelity graphics, video assets, brand content, and commercial photography.",
     bullets: [
@@ -23,7 +25,7 @@ const pillars = [
   },
   {
     num: "03",
-    icon: "hub",
+    Icon: Network,
     title: "Connect",
     desc: "AI chatbots, WhatsApp business tools, CRM systems, and automated lead workflows.",
     bullets: [
@@ -56,32 +58,30 @@ export function AboutCapabilities() {
 
         {/* 3 Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-          {pillars.map((pillar) => (
+          {pillars.map(({ num, Icon, title, desc, bullets }) => (
             <div
-              key={pillar.num}
+              key={num}
               className="group relative flex flex-col justify-between p-space-xl bg-surface-container rounded-xl shadow-md transition-all duration-300 hover:bg-surface-container-high"
             >
               <div className="flex flex-col gap-space-md">
                 <div className="flex items-center justify-between">
                   <span className="font-headline-sm text-headline-sm text-primary-container font-mono">
-                    {pillar.num}
+                    {num}
                   </span>
                   <div className="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container shadow-inner">
-                    <span className="material-symbols-outlined text-2xl">
-                      {pillar.icon}
-                    </span>
+                    <Icon className="h-5 w-5" />
                   </div>
                 </div>
                 <h3 className="font-headline-lg text-headline-lg text-primary tracking-tight mt-2">
-                  {pillar.title}
+                  {title}
                 </h3>
                 <p className="font-body-md text-body-md text-secondary leading-relaxed">
-                  {pillar.desc}
+                  {desc}
                 </p>
               </div>
 
               <div className="pt-space-xl mt-space-lg border-t border-surface-variant/60 flex flex-col gap-2">
-                {pillar.bullets.map((b) => (
+                {bullets.map((b) => (
                   <div
                     key={b}
                     className="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md"

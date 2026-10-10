@@ -1,6 +1,14 @@
+import {
+  Monitor,
+  Quote,
+  Image,
+  GitFork,
+  ShieldCheck,
+} from "lucide-react";
+
 const deliverables = [
   {
-    icon: "devices",
+    Icon: Monitor,
     title: "Professional digital experiences",
     desc: "Engineered against modern, responsive web standards for immediate responsiveness, low latency, and cross-device parity.",
     tag: "SPECIFICATION",
@@ -8,7 +16,7 @@ const deliverables = [
     wide: false,
   },
   {
-    icon: "format_quote",
+    Icon: Quote,
     title: "Clear presentation of products and services",
     desc: "Structured copywriting and architectural layout hierarchy that removes friction and guides buyers to take action.",
     tag: "STRUCTURE",
@@ -16,7 +24,7 @@ const deliverables = [
     wide: false,
   },
   {
-    icon: "perm_media",
+    Icon: Image,
     title: "Content for your online presence",
     desc: "Ready-to-publish digital media designed specifically for your brand voice across website channels, social, and search.",
     tag: "FORMAT",
@@ -24,7 +32,7 @@ const deliverables = [
     wide: false,
   },
   {
-    icon: "alt_route",
+    Icon: GitFork,
     title: "Connected business tools and organized leads",
     desc: "Automatic synchronization to your CRM, WhatsApp channels, and instant lead notification streams so zero prospective clients fall through manual operational cracks.",
     tag: "INTEGRATION",
@@ -32,7 +40,7 @@ const deliverables = [
     wide: true,
   },
   {
-    icon: "verified_user",
+    Icon: ShieldCheck,
     title: "Ongoing maintenance where agreed",
     desc: "Reliable, SLA-backed technical support keeping your systems updated, monitored, protected, and fully functional.",
     tag: "CONTINUITY",
@@ -65,29 +73,27 @@ export function AboutDeliverables() {
 
       {/* Asymmetrical 5-Card Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
-        {deliverables.map((d) => (
+        {deliverables.map(({ Icon, title, desc, tag, badge, wide }) => (
           <div
-            key={d.title}
+            key={title}
             className={`p-space-lg bg-surface-container rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors${
-              d.wide ? " lg:col-span-2" : ""
+              wide ? " lg:col-span-2" : ""
             }`}
           >
             <div>
               <div className="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container mb-space-md">
-                <span className="material-symbols-outlined text-lg">
-                  {d.icon}
-                </span>
+                <Icon className="h-4 w-4" />
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary mb-space-xs">
-                {d.title}
+                {title}
               </h3>
               <p className="font-body-sm text-body-sm text-secondary leading-relaxed">
-                {d.desc}
+                {desc}
               </p>
             </div>
             <div className="mt-space-lg pt-space-sm border-t border-surface-variant/40 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
-              <span>{d.tag}</span>
-              <span className="text-primary-container font-mono">{d.badge}</span>
+              <span>{tag}</span>
+              <span className="text-primary-container font-mono">{badge}</span>
             </div>
           </div>
         ))}
