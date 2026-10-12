@@ -44,7 +44,8 @@ export function ContactPreview() {
                 Have a project in mind?
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant mt-4 leading-relaxed">
-                Tell us what your business needs, and let&apos;s discuss how we can help.
+                Tell us what your business needs, and let&apos;s discuss how we
+                can help.
               </p>
             </div>
 
@@ -115,7 +116,8 @@ export function ContactPreview() {
                       htmlFor="contact-name"
                       className="font-label-md text-label-md text-primary font-medium"
                     >
-                      Full Name <span className="text-primary-container">*</span>
+                      Full Name{" "}
+                      <span className="text-primary-container">*</span>
                     </label>
                     <input
                       id="contact-name"
@@ -248,8 +250,7 @@ export function ContactPreview() {
                     type="submit"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:brightness-105 active:scale-95 transition-all shadow-md"
                   >
-                    Let&apos;s Talk{" "}
-                    <ArrowUpRight className="h-4 w-4" />
+                    Let&apos;s Talk <ArrowUpRight className="h-4 w-4" />
                   </button>
                 </div>
 
@@ -261,8 +262,8 @@ export function ContactPreview() {
                   >
                     <CheckCircle2 className="h-5 w-5 text-primary-container shrink-0" />
                     <p className="font-body-sm text-body-sm text-primary">
-                      Thank you. Your message has been received and our technical
-                      lead will follow up shortly.
+                      Thank you. Your message has been received and our
+                      technical lead will follow up shortly.
                     </p>
                   </div>
                 )}

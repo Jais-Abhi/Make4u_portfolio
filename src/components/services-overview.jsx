@@ -62,8 +62,8 @@ export function ServicesOverview() {
             What can we help you with?
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant mt-3 leading-relaxed">
-            Choose the service your business needs. Explore what&apos;s included,
-            see the available options and request a quote.
+            Choose the service your business needs. Explore what&apos;s
+            included, see the available options and request a quote.
           </p>
         </div>
 

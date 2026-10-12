@@ -16,6 +16,14 @@ export const metadata = {
   title: "Work4U Digital Solutions — Click. Connect. Convert.",
   description:
     "We build websites, create digital content, and connect useful tools to help businesses grow online and work more efficiently.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/portfolio_logo.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/portfolio_logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

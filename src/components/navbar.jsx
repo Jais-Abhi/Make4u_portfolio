@@ -25,11 +25,14 @@ export function Navbar() {
         <div className="flex items-center gap-space-md shrink-0">
           <Link
             href="/"
-            className="flex items-center gap-2 font-headline-sm text-headline-sm text-primary tracking-tight"
+            className="flex items-center gap-2.5 font-headline-sm text-headline-sm text-primary tracking-tight group"
           >
-            <span className="w-8 h-8 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold text-sm">
-              W4U
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/portfolio_logo.png"
+              alt="Work4U Logo"
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
             <span>Work4U Digital Solutions</span>
             <span className="inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
           </Link>

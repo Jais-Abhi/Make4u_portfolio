@@ -2,11 +2,11 @@ import { ArrowUpRight, ArrowDown } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative w-full pt-12 pb-24 md:py-32 px-gutter overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="relative w-full pt-4 md:pt-6 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
+      <div className="max-w-7xl xl:max-w-[1536px] mx-auto flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
           {/* Left Column: Value Proposition & CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant mb-6 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
               <span className="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-semibold">
@@ -48,16 +48,16 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Hero Visual Mockup */}
-          <div className="lg:col-span-5 w-full flex items-center justify-center">
-            <div className="relative w-full max-w-lg lg:max-w-none group">
+          <div className="lg:col-span-7 xl:col-span-7 w-full flex items-center justify-center lg:justify-end">
+            <div className="relative w-full max-w-2xl lg:max-w-none lg:w-[112%] xl:w-[122%] lg:-mr-6 xl:-mr-12 group">
               {/* Subtle ambient glow behind the transparent graphic */}
               <div
-                className="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-secondary-container/20 rounded-full blur-3xl -z-10 pointer-events-none opacity-60 dark:opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+                className="absolute inset-0 bg-gradient-to-tr from-primary-container/25 to-secondary-container/25 rounded-full blur-3xl scale-110 -z-10 pointer-events-none opacity-70 dark:opacity-50 transition-opacity duration-500 group-hover:opacity-90"
                 aria-hidden="true"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className="w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                className="w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]"
                 alt="Modern digital solutions dashboard and mobile interface preview"
                 src="/hero.png"
               />

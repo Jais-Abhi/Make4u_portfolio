@@ -14,10 +14,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-surface-variant">
           {/* Brand info */}
           <div className="flex flex-col gap-space-md">
-            <div className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold text-xs">
-                W4U
-              </span>
+            <div className="flex items-center gap-2.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/portfolio_logo.png"
+                alt="Work4U Logo"
+                className="h-7 w-auto object-contain"
+              />
               <span className="font-headline-sm text-headline-sm text-primary tracking-tight">
                 Work4U<span className="text-primary-container">.</span>
               </span>
