@@ -15,7 +15,8 @@ export function HeroSection() {
             </div>
 
             <h1 className="font-display text-display-mobile md:text-display text-primary tracking-tight font-bold mb-4">
-              Click. Connect. Convert<span className="text-primary-container">.</span>
+              Click. Connect. Convert
+              <span className="text-primary-container">.</span>
             </h1>
 
             <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-semibold tracking-tight mb-4">
@@ -23,7 +24,8 @@ export function HeroSection() {
             </h2>
 
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-8">
-              We build websites, create digital content and connect useful tools to help businesses grow online and work more efficiently.
+              We build websites, create digital content and connect useful tools
+              to help businesses grow online and work more efficiently.
             </p>
 
             <div className="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
@@ -46,13 +48,18 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Hero Visual Mockup */}
-          <div className="lg:col-span-5 w-full">
-            <div className="relative rounded-2xl bg-surface-container border border-outline-variant overflow-hidden shadow-2xl group transition-all duration-300 hover:border-primary-container/40">
+          <div className="lg:col-span-5 w-full flex items-center justify-center">
+            <div className="relative w-full max-w-lg lg:max-w-none group">
+              {/* Subtle ambient glow behind the transparent graphic */}
+              <div
+                className="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-secondary-container/20 rounded-full blur-3xl -z-10 pointer-events-none opacity-60 dark:opacity-40 transition-opacity duration-500 group-hover:opacity-80"
+                aria-hidden="true"
+              />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                alt="Modern dark mode dashboard mockup and mobile app interface preview"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDViJqVt9tPxKY8Sq0BK7BFk6Hn6ZrHcwpx-xSQQnvst6zbBrU78Ecqb_RHAlEJ_Nxbsc1m4WwHCnc5toVBshZnsnUunPUWLsz5ds7uG1Cqs0_MsnRCQ159XkmQhkWImWlB14alCPMc_zHkgSoHy1GgL2w9b1EiZEAH-VZxELmqc97dLP1Ib4K5VeiRa7AiRco-0Ezlyc4FkdnxMyECLXj-XfLo6e0kUl7c0LQgR7jZxXeuXLQbkhy0"
+                className="w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                alt="Modern digital solutions dashboard and mobile interface preview"
+                src="/hero.png"
               />
             </div>
           </div>
