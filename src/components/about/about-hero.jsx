@@ -1,84 +1,94 @@
-import { Zap } from "lucide-react";
-
 export function AboutHero() {
+  const pillars = [
+    "Strategy",
+    "Design",
+    "Automation",
+    "Support",
+  ];
+
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-gutter pt-space-xl pb-space-xl overflow-hidden">
-      {/* Ambient Backdrop Accents */}
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-surface-container-high/40 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative w-full overflow-hidden border-b border-outline-variant bg-surface-container-low px-gutter py-20 md:py-28">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-70"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, color-mix(in srgb, var(--outline-variant) 60%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--outline-variant) 60%, transparent) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+          maskImage: "radial-gradient(circle at center, black 35%, transparent 100%)",
+        }}
+      />
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
-        {/* Left: Heading & Lead */}
-        <div className="lg:col-span-8 flex flex-col gap-space-lg">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-space-xs self-start px-3 py-1 bg-surface-container-low rounded border border-outline-variant/40 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
-            <span className="font-label-sm text-label-sm tracking-widest text-primary-container uppercase font-semibold">
-              About The Agency
-            </span>
-          </div>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="relative">
+            
 
-          {/* Display Heading */}
-          <h1 className="font-display text-display text-primary tracking-tight max-w-3xl leading-[1.08]">
-            We make digital work{" "}
-            <span className="text-primary-container italic font-normal">
-              simpler.
-            </span>
-          </h1>
+            <h1 className="max-w-xl text-4xl font-semibold leading-tight tracking-[-0.06em] text-primary md:text-5xl">
+              We help businesses grow with clearer digital systems.
+            </h1>
 
-          {/* Lead Paragraph */}
-          <p className="font-body-lg text-body-lg text-secondary max-w-2xl leading-relaxed">
-            Work4U Digital Solutions brings development, creative services, and
-            business automation together to help businesses establish a stronger
-            digital presence.
-          </p>
-        </div>
+            <p className="mt-5 max-w-xl text-base leading-8 text-on-surface-variant md:text-lg">
+              Work4U Digital Solutions brings strategy, design, development, and
+              support together to help businesses build a digital presence that feels
+              intentional, consistent, and easy to trust.
+            </p>
 
-        {/* Right: Stat Strip */}
-        <div className="lg:col-span-4 flex flex-col gap-space-md w-full mt-4 lg:mt-8">
-          <div className="p-space-lg bg-surface-container rounded-xl shadow-md border-t-2 border-primary-container">
-            <div className="flex items-center justify-between pb-space-sm border-b border-surface-variant/60">
-              <span className="font-label-md text-label-md uppercase tracking-wider text-secondary">
-                System Methodology
-              </span>
-              <span className="font-label-sm text-label-sm text-primary-container font-mono">
-                STABLE // 2025
-              </span>
-            </div>
-            <div className="pt-space-md flex flex-col gap-space-sm">
-              <div className="flex items-baseline justify-between">
-                <span className="font-body-sm text-body-sm text-on-surface-variant">
-                  Core Disciplines
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {pillars.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-outline-variant bg-surface-container px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-on-surface-variant"
+                >
+                  {item}
                 </span>
-                <span className="font-headline-sm text-headline-sm text-primary font-mono">
-                  03
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <span className="font-body-sm text-body-sm text-on-surface-variant">
-                  Execution Model
-                </span>
-                <span className="font-body-sm text-body-sm text-primary font-medium">
-                  Modular End-to-End
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <span className="font-body-sm text-body-sm text-on-surface-variant">
-                  Philosophy
-                </span>
-                <span className="font-body-sm text-body-sm text-primary-container font-semibold">
-                  Utility First
-                </span>
-              </div>
+              ))}
             </div>
           </div>
 
-          <div className="px-space-lg py-space-md bg-surface-container-low rounded-xl flex items-center justify-between shadow-sm">
-            <div className="flex items-center gap-space-sm">
-              <Zap className="h-4 w-4 text-primary-container" />
-              <span className="font-label-sm text-label-sm text-secondary uppercase tracking-wider">
-                No bloat. No jargon. Pure execution.
-              </span>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-4xl bg-primary-container/8 blur-3xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-outline-variant bg-surface-container p-5 shadow-[0_20px_60px_rgba(17,24,19,0.08)] md:p-6">
+              <div className="flex items-center justify-between border-b border-outline-variant/70 pb-4">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-on-surface-variant">
+                  Our approach
+                </span>
+                <span className="rounded-full border border-primary-container/40 bg-primary-container/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-container">
+                  Human-led
+                </span>
+              </div>
+
+              <div className="mt-5 space-y-4">
+                <div className="rounded-2xl border border-outline-variant/70 bg-surface-container-low p-4">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant">
+                    01 — Understand
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-on-surface-variant">
+                    We start by learning how your business works, what customers expect,
+                    and what matters most to your growth.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-outline-variant/70 bg-surface-container-low p-4">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant">
+                    02 — Build
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-on-surface-variant">
+                    We turn that clarity into systems and experiences that are practical,
+                    useful, and built to last.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-outline-variant/70 bg-surface-container-low p-4">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant">
+                    03 — Support
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-on-surface-variant">
+                    We stay involved after launch to refine, improve, and keep everything
+                    moving smoothly.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

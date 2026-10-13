@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { AboutPreview } from "@/components/about-preview";
-import { ServicesOverview } from "@/components/services-overview";
 import { WhyChooseMake4U } from "@/components/why-choose-make4u";
+import { ServicesOverview } from "@/components/services-overview";
 import { HowWeWork } from "@/components/how-we-work";
+import { FaqSection } from "@/components/why-choose-make4u";
 import { ContactPreview } from "@/components/contact-preview";
 import { Footer } from "@/components/footer";
 
@@ -22,15 +23,17 @@ export default function Home() {
           {/* Section B: About Preview */}
           <AboutPreview />
 
-          {/* Section C: Services Overview */}
+          {/* Section C: Why Choose Make4U */}
+          {/* <WhyChooseMake4U /> */}
+
+          {/* Section D: Services Overview */}
           <ServicesOverview />
-          
-          {/* Section E: How We Work */}
+
+          {/* Section D: How We Work */}
           <HowWeWork />
 
-          {/* Section D: Why Choose Make4U FAQs */}
-          <WhyChooseMake4U />
-
+          {/* Section E: Got Questions? FAQ */}
+          <FaqSection />
 
           {/* Section F: Contact Preview with Interactive Form */}
           <ContactPreview />

@@ -1,217 +1,309 @@
 "use client";
 
 import * as React from "react";
-import {
-  Plus,
-  Minus,
-  Sparkles,
-  ShieldCheck,
-  Zap,
-  ArrowUpRight,
-  Headphones,
-} from "lucide-react";
+import Link from "next/link";
+import { Plus, Minus, ArrowUpRight } from "lucide-react";
+
+// export function WhyChooseMake4U() {
+//   const reasons = [
+//     {
+//       number: "01",
+//       title: "Built Around Your Business",
+//       description:
+//         "We understand your goals and tailor our approach to your needs instead of offering a one-size-fits-all solution.",
+//     },
+//     {
+//       number: "02",
+//       title: "Simple and Transparent",
+//       description:
+//         "Clear communication, straightforward explanations, and an agreed project scope help you know what to expect.",
+//     },
+//     {
+//       number: "03",
+//       title: "Everything Working Together",
+//       description:
+//         "From your online presence to business automation, we help connect the right digital solutions for your business.",
+//     },
+//     {
+//       number: "04",
+//       title: "A Team You Can Rely On",
+//       description:
+//         "We value long-term relationships and provide support according to your project's agreed requirements and plan.",
+//     },
+//   ];
+
+//   return (
+//     <section
+//       id="why-choose-us"
+//       className="relative w-full overflow-hidden border-t border-outline-variant bg-background py-20 px-gutter md:py-28"
+//     >
+//       <div className="absolute inset-0 opacity-60" aria-hidden="true">
+//         <div className="h-full w-full bg-[linear-gradient(to_right,rgba(120,132,121,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,132,121,0.08)_1px,transparent_1px)] bg-size-[32px_32px] mask-[radial-gradient(circle_at_center,black,transparent_92%)]" />
+//       </div>
+
+//       <div className="relative mx-auto max-w-7xl">
+//         <div className="mb-10 max-w-3xl">
+//           <span className="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface-container px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-container">
+//             <span className="h-1.5 w-1.5 rounded-full bg-primary-container" />
+//             WHY MAKE4U
+//           </span>
+
+//           <h2 className="mt-5 text-headline-lg-mobile md:text-headline-lg text-primary font-semibold tracking-tight">
+//             More Than a Service Provider. A Partner in Your Growth.
+//           </h2>
+
+//           <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant leading-relaxed">
+//             We believe great digital solutions start with understanding your business. At Make4U Digital Solutions, we work closely with you to create practical solutions, simplify your digital journey, and support your business as it grows.
+//           </p>
+//         </div>
+
+//         <div className="grid gap-5 md:grid-cols-2">
+//           {reasons.map((reason) => (
+//             <div
+//               key={reason.number}
+//               className="rounded-2xl border border-outline-variant bg-surface-container p-5 shadow-[0_16px_40px_rgba(17,24,19,0.04)] transition-transform duration-200 hover:-translate-y-1 md:p-6"
+//             >
+//               <div className="mb-5 flex items-center justify-between gap-3 border-b border-outline-variant/80 pb-3">
+//                 <span className="text-3xl font-semibold tracking-tight text-primary-container">
+//                   {reason.number}
+//                 </span>
+//                 <span className="h-px flex-1 bg-outline-variant/80" aria-hidden="true" />
+//               </div>
+
+//               <h3 className="text-headline-sm text-primary font-semibold leading-tight">
+//                 {reason.title}
+//               </h3>
+
+//               <p className="mt-3 text-body-sm text-on-surface-variant leading-relaxed">
+//                 {reason.description}
+//               </p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 export function WhyChooseMake4U() {
-  const [openIndex, setOpenIndex] = React.useState(0);
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
-
-  const faqs = [
+  const reasons = [
     {
-      question: "What makes Make4U different from other agencies?",
-      answer:
-        "We focus on practical business results rather than confusing technical jargon. From day one, you get transparent communication, predictable timelines, direct collaboration with our dedicated developers and creators, and solutions custom-tailored to your real-world business needs—without agency overhead or surprise costs.",
+      number: "01",
+      title: "Built Around Your Business",
+      description:
+        "We understand your goals and tailor our approach to your needs instead of offering a one-size-fits-all solution.",
     },
     {
-      question: "What services do you offer?",
-      answer:
-        "Make4U delivers comprehensive digital solutions: custom website and web app development, search engine optimization (SEO), creative digital content (graphic design, video editing, branding), photography/videography, and smart workflow automation (WhatsApp routing, lead funnels, and CRM integration).",
+      number: "02",
+      title: "Simple and Transparent",
+      description:
+        "Clear communication, straightforward explanations, and an agreed project scope help you know what to expect.",
     },
     {
-      question: "Can you build a website tailored to my business?",
-      answer:
-        "Yes, 100%. We never rely on rigid, cookie-cutter templates. Every website is engineered from the ground up to reflect your unique brand identity, engage your exact target market, perform lightning-fast on mobile devices, and effectively convert visitors into inquiries and paying customers.",
+      number: "03",
+      title: "Everything Working Together",
+      description:
+        "From your online presence to business automation, we help connect the right digital solutions for your business.",
     },
     {
-      question: "Do you provide ongoing website maintenance and support?",
-      answer:
-        "Absolutely. Launching your website is just the beginning. We provide proactive maintenance plans that include high-speed hosting management, continuous security monitoring, regular data backups, software updates, and rapid content edits so you never have to worry about downtime or technical maintenance.",
-    },
-    {
-      question: "How do your pricing and subscription plans work?",
-      answer:
-        "We prioritize full cost transparency. For project-based work, you receive a clear, itemized proposal with upfront pricing and zero hidden fees. For ongoing support and iterative enhancements, we offer predictable, flexible monthly plans designed to scale affordably with your business.",
-    },
-    {
-      question: "How can Make4U help my business grow online?",
-      answer:
-        "We build a cohesive digital ecosystem for your brand: high-converting web experiences that rank prominently in search results, eye-catching visual content that commands attention on social channels, and automated customer routing tools so your business never misses an inbound lead.",
-    },
-  ];
-
-  const valuePillars = [
-    {
-      icon: ShieldCheck,
-      title: "Reliable & Transparent",
-      desc: "Clear upfront quotes, fixed milestones, and honest guidance.",
-    },
-    {
-      icon: Zap,
-      title: "High Performance",
-      desc: "Fast, modern websites engineered to convert visitors into clients.",
-    },
-    {
-      icon: Headphones,
-      title: "Ongoing Support",
-      desc: "Continuous technical care and quick turnaround assistance.",
+      number: "04",
+      title: "A Team You Can Rely On",
+      description:
+        "We value long-term relationships and provide support according to your project's agreed requirements and plan.",
     },
   ];
 
   return (
     <section
       id="why-choose-us"
-      className="w-full py-20 md:py-28 px-4 sm:px-6 lg:px-8 xl:px-12 bg-background border-t border-outline-variant transition-colors duration-200"
+      className="relative w-full overflow-hidden border-t border-outline-variant bg-background py-20 px-gutter md:py-28"
     >
-      <div className="max-w-7xl xl:max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Heading, Context & Trust Highlights */}
-          <div className="lg:col-span-5 flex flex-col items-start lg:sticky lg:top-28">
-            {/* Blue-accented badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4 shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-              <span className="font-label-sm text-label-sm text-blue-600 dark:text-blue-400 uppercase tracking-widest font-semibold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" />
-                WHY CHOOSE MAKE4U
-              </span>
+      <div className="absolute inset-0 opacity-60" aria-hidden="true">
+        <div className="h-full w-full bg-[linear-gradient(to_right,rgba(120,132,121,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,132,121,0.08)_1px,transparent_1px)] bg-size-[32px_32px] mask-[radial-gradient(circle_at_center,black,transparent_92%)]" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="mb-10 max-w-3xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface-container px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-container">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-container" />
+            WHY MAKE4U
+          </span>
+
+          <h2 className="mt-5 text-[clamp(2.5rem,3.8vw,4.5rem)] font-black leading-[0.94] tracking-[-0.06em] text-primary">
+            More Than a Service Provider. A Partner in Your Growth.
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant leading-relaxed">
+            We believe great digital solutions start with understanding your business. At Make4U Digital Solutions, we work closely with you to create practical solutions, simplify your digital journey, and support your business as it grows.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {reasons.map((reason) => (
+            <div
+              key={reason.number}
+              className="rounded-2xl border border-outline-variant bg-surface-container p-5 shadow-[0_16px_40px_rgba(17,24,19,0.04)] transition-transform duration-200 hover:-translate-y-1 md:p-6"
+            >
+              <div className="mb-5 flex items-center justify-between gap-3 border-b border-outline-variant/80 pb-3">
+                <span className="text-3xl font-semibold tracking-tight text-primary-container">
+                  {reason.number}
+                </span>
+                <span className="h-px flex-1 bg-outline-variant/80" aria-hidden="true" />
+              </div>
+
+              <h3 className="text-headline-sm text-primary font-semibold leading-tight">
+                {reason.title}
+              </h3>
+
+              <p className="mt-3 text-body-sm text-on-surface-variant leading-relaxed">
+                {reason.description}
+              </p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-            <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-bold tracking-tight">
-              A reliable digital partner built for your growth
-              <span className="text-blue-600 dark:text-blue-400">.</span>
-            </h2>
+export function FaqSection() {
+  const [openIndex, setOpenIndex] = React.useState(0);
 
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-4 leading-relaxed max-w-xl">
-              We make the digital transformation process simple, clear, and
-              focused on measurable outcomes. Here is what you can expect when
-              partnering with Make4U Digital Solutions.
-            </p>
+  const faqs = [
+    {
+      question: "What services do you provide?",
+      answer:
+        "We help businesses with website and app development, SEO, digital marketing, graphic design, video editing, photography, videography, AI chatbots, WhatsApp integration, and business automation.",
+    },
+    {
+      question: "How do I get started?",
+      answer:
+        "Contact us and tell us about your business and requirements. We'll discuss your goals, suggest a suitable approach, and provide a tailored quote.",
+    },
+    {
+      question: "How much does a project cost?",
+      answer:
+        "Pricing depends on the project's scope, features, and complexity. Contact us to discuss your requirements and receive a suitable quote.",
+    },
+    {
+      question: "How long does a project take?",
+      answer:
+        "Timelines vary depending on the project's size and requirements. We'll discuss the expected schedule before work begins and keep you updated throughout the process.",
+    },
+    {
+      question: "Do you provide maintenance and ongoing support?",
+      answer:
+        "Yes, we offer maintenance and support options according to the selected plan and agreed requirements.",
+    },
+    {
+      question: "Can you help my business attract more customers?",
+      answer:
+        "We can help improve your online presence through website development, SEO, marketing, and suitable enquiry-management solutions. Results depend on your market, strategy, and other factors.",
+    },
+    {
+      question: "Can you integrate WhatsApp and AI chatbots?",
+      answer:
+        "Yes, we can integrate suitable WhatsApp solutions, AI chatbots, and automated workflows based on your business needs and the capabilities of the selected tools.",
+    },
+    {
+      question: "Can I request changes during development?",
+      answer:
+        "Yes, we share progress and incorporate feedback according to the agreed project scope and revision terms.",
+    },
+  ];
 
-            {/* Value Highlights Cards */}
-            <div className="w-full mt-8 flex flex-col gap-3.5">
-              {valuePillars.map((pillar, idx) => {
-                const IconComponent = pillar.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3.5 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/80 transition-all duration-200 hover:border-blue-500/30"
+  const toggleAccordion = (index) => {
+    setOpenIndex((current) => (current === index ? -1 : index));
+  };
+
+  return (
+    <section id="faq" className="w-full border-t border-outline-variant bg-surface-container-low py-20 px-gutter md:py-28">
+      <div className="mx-auto w-full max-w-[min(1500px,calc(100vw-2rem))] xl:px-17">
+        <div className="mb-8 max-w-3xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface-container px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-container">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-container" />
+            GOT QUESTIONS?
+          </span>
+
+          <h2 className="mt-5 text-headline-lg-mobile md:text-headline-lg text-primary font-semibold tracking-tight">
+            Everything You Need to Know.
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant leading-relaxed">
+            Have questions before getting started? Here are some helpful answers about working with Make4U.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div
+                key={faq.question}
+                className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+                  isOpen
+                    ? "border-primary-container/60 bg-surface-container shadow-[0_12px_32px_rgba(17,24,19,0.05)]"
+                    : "border-outline-variant bg-surface-container/70 hover:border-outline"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                  id={`faq-question-${index}`}
+                  className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left sm:px-5"
+                >
+                  <span className="text-base font-semibold text-primary sm:text-lg">
+                    {faq.question}
+                  </span>
+
+                  <span
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
+                      isOpen
+                        ? "border-primary-container bg-primary-container text-on-primary-fixed"
+                        : "border-outline-variant bg-surface-container text-on-surface-variant"
+                    }`}
+                    aria-hidden="true"
                   >
-                    <div className="p-2 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-primary">
-                        {pillar.title}
-                      </h4>
-                      <p className="text-xs text-on-surface-variant mt-0.5 leading-normal">
-                        {pillar.desc}
+                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </span>
+                </button>
+
+                <div
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${index}`}
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="border-t border-outline-variant/70 px-4 pb-4 pt-3 sm:px-5">
+                      <p className="text-body-md text-on-surface-variant leading-relaxed">
+                        {faq.answer}
                       </p>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Quick Contact CTA Card */}
-            <div className="mt-8 p-5 rounded-2xl bg-surface-container border border-outline-variant w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
-              <div>
-                <p className="text-sm font-semibold text-primary">
-                  Have a specific question?
-                </p>
-                <p className="text-xs text-on-surface-variant mt-0.5">
-                  Talk directly with our solutions team.
-                </p>
-              </div>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold tracking-wide transition-colors shrink-0 shadow-sm group"
-              >
-                Get in Touch
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column: Accordion FAQs */}
-          <div className="lg:col-span-7 w-full flex flex-col gap-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div
-                  key={index}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                    isOpen
-                      ? "bg-surface-container border-blue-500/40 shadow-md ring-1 ring-blue-500/20"
-                      : "bg-surface-container-low/70 border-outline-variant hover:border-blue-500/30 hover:bg-surface-container-low"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleAccordion(index)}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${index}`}
-                    id={`faq-question-${index}`}
-                    className="w-full py-5 px-5 sm:px-6 flex items-center justify-between gap-4 text-left cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                  >
-                    <span
-                      className={`text-base sm:text-lg font-semibold tracking-tight transition-colors duration-200 ${
-                        isOpen
-                          ? "text-blue-600 dark:text-blue-400"
-                          : "text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400"
-                      }`}
-                    >
-                      {faq.question}
-                    </span>
-
-                    <span
-                      className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                        isOpen
-                          ? "bg-blue-600 text-white rotate-0"
-                          : "bg-surface-container border border-outline-variant text-on-surface-variant group-hover:border-blue-500/40 group-hover:text-blue-600 dark:group-hover:text-blue-400"
-                      }`}
-                      aria-hidden="true"
-                    >
-                      {isOpen ? (
-                        <Minus className="w-4 h-4" />
-                      ) : (
-                        <Plus className="w-4 h-4" />
-                      )}
-                    </span>
-                  </button>
-
-                  <div
-                    id={`faq-answer-${index}`}
-                    role="region"
-                    aria-labelledby={`faq-question-${index}`}
-                    className={`grid transition-all duration-300 ease-in-out ${
-                      isOpen
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <div className="px-5 sm:px-6 pb-6 pt-1 border-t border-outline-variant/40">
-                        <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-outline-variant/80 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-body-md text-on-surface-variant">
+            Still have questions? <span className="font-semibold text-primary">Let&apos;s talk.</span>
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-container px-5 py-3 text-label-lg font-semibold text-on-primary-fixed transition-all duration-200 hover:brightness-105 active:translate-y-px"
+          >
+            Contact Us
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

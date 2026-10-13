@@ -63,11 +63,11 @@ export function AboutDeliverables() {
           <h2 className="font-headline-xl text-headline-xl text-primary tracking-tight max-w-xl">
             What We Deliver.
           </h2>
-          <p className="font-body-md text-body-md text-secondary max-w-md">
+          {/* <p className="font-body-md text-body-md text-secondary max-w-md">
             Every project is scoped around tangible business utility, eliminating
             vague billables and cosmetic work that doesn&apos;t yield measurable
             operations.
-          </p>
+          </p> */}
         </div>
       </div>
 
