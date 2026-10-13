@@ -13,6 +13,7 @@ export function Navbar() {
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
   const isServices = pathname === "/services";
+  const isPricing = pathname === "/pricing";
   const isMaintenance =
     pathname === "/maintenance-plans" ||
     pathname === "/services/maintenance-plans";
@@ -71,6 +72,16 @@ export function Navbar() {
             }`}
           >
             Services
+          </Link>
+          <Link
+            href="/pricing"
+            className={`transition-colors ${
+              isPricing
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
+            }`}
+          >
+            Pricing
           </Link>
           <Link
             href="/maintenance-plans"
@@ -161,6 +172,17 @@ export function Navbar() {
             }`}
           >
             Services
+          </Link>
+          <Link
+            href="/pricing"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`py-2 text-sm ${
+              isPricing
+                ? "text-primary-container font-semibold"
+                : "text-on-surface-variant hover:text-on-surface font-medium"
+            }`}
+          >
+            Pricing
           </Link>
           <Link
             href="/maintenance-plans"
