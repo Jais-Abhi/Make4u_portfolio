@@ -20,23 +20,23 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
-      <div className="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-2 sm:gap-space-md">
+      <div className="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
         {/* Brand */}
-        <div className="flex items-center gap-2 shrink-0 sm:gap-space-md">
+        <div className="flex items-center gap-space-md shrink-0 lg:flex">
           <Link
             href="/"
-            className="flex items-center gap-1.5 text-primary tracking-tight group sm:gap-2.5"
+            className="flex items-center gap-2.5 font-headline-sm text-headline-sm text-primary tracking-tight group lg:flex-row"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/portfolio_logo.png"
               alt="Work4U Logo"
-              className="h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-8"
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-[0.7rem] font-semibold leading-none sm:text-headline-sm sm:font-headline-sm">
+            <span className="text-[0.7rem] leading-none sm:text-[0.8rem] lg:text-[1.3rem] lg:font-semibold lg:leading-none">
               Work4U Digital Solutions
             </span>
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-container ml-0.5 sm:w-2 sm:h-2"></span>
+            <span className="inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
           </Link>
         </div>
 
@@ -96,7 +96,9 @@ export function Navbar() {
 
         {/* Right Actions: Theme Toggle & CTA */}
         <div className="flex items-center gap-3 shrink-0">
-          <ThemeToggle />
+          <div className="hidden lg:block">
+            <ThemeToggle />
+          </div>
 
           <Link
             href="/contact"
@@ -113,9 +115,9 @@ export function Navbar() {
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-4 w-4 sm:h-5 sm:w-5" />
+              <X className="h-5 w-5" />
             ) : (
-              <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
+              <Menu className="h-5 w-5" />
             )}
           </button>
         </div>
@@ -124,6 +126,9 @@ export function Navbar() {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-surface-variant bg-surface/98 backdrop-blur-2xl px-gutter py-5 flex flex-col gap-3 animate-in fade-in slide-in-from-top-2">
+          <div className="flex justify-end">
+            <ThemeToggle />
+          </div>
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
