@@ -22,10 +22,10 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
       <div className="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
         {/* Brand */}
-        <div className="flex items-center gap-space-md shrink-0 lg:flex">
+        <div className="flex items-center gap-2 shrink-0 lg:flex lg:gap-space-md">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-headline-sm text-headline-sm text-primary tracking-tight group lg:flex-row"
+            className="flex min-w-0 items-center gap-2.5 font-headline-sm text-headline-sm text-primary tracking-tight group lg:flex-row"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -33,10 +33,10 @@ export function Navbar() {
               alt="Work4U Logo"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-[0.7rem] leading-none sm:text-[0.8rem] lg:text-[1.3rem] lg:font-semibold lg:leading-none">
+            <span className="text-[0.9rem] leading-none sm:text-[0.95rem] md:text-[1rem] lg:text-[1.3rem] lg:font-semibold lg:leading-none">
               Work4U Digital Solutions
             </span>
-            <span className="inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
+            <span className="hidden sm:inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
           </Link>
         </div>
 

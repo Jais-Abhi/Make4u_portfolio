@@ -23,23 +23,26 @@ export function HeroSection() {
             </span>
           </div> */}
 
-          <div className="self-start text-[0.8rem] font-black uppercase tracking-[0.22em] text-on-surface-variant md:text-[0.9rem] lg:self-auto">
+          <div className="self-start text-[0.68rem] font-black uppercase tracking-[0.18em] text-on-surface-variant sm:text-[0.8rem] md:text-[0.9rem] lg:self-auto">
             <span className="text-primary-container">CLICK.</span> CONNECT. CONVERT.
           </div>
         </div>
 
         <div className="max-w-[1350px] pb-7 md:pb-10 lg:pb-12">
-          <h1 className="max-w-[1200px] text-balance text-[clamp(3.3rem,7vw,8.5rem)] font-black leading-[0.82] tracking-[-0.065em] text-primary">
+          <h1 className="max-w-[1200px] text-balance text-[clamp(2.25rem,9vw,8.5rem)] font-black leading-[0.82] tracking-[-0.01em] text-primary sm:text-[clamp(2.8rem,8vw,8.5rem)] md:text-[clamp(3.3rem,7vw,8.5rem)]">
             WE BUILD DIGITAL
             <span className="mt-2 block text-primary md:mt-3">
-              <span className="text-primary-container">SOLUTIONS</span> THAT
+              <span className="text-primary-container">SOLUTIONS</span>
+              <span className="inline-block px-2 sm:px-4 md:px-6">THAT</span>
             </span>
-            <span className="mt-2 block text-primary md:mt-3">GROW YOUR BUSINESS.</span>
+            <span className="mt-2 block text-primary md:mt-3 tracking-[-0.05em]">
+              GROW YOUR BUSINESS.
+            </span>
           </h1>
         </div>
 
         <div className="max-w-[760px]">
-          <p className="text-body-lg leading-relaxed text-on-surface-variant md:text-[1.125rem]">
+          <p className="text-[0.94rem] leading-relaxed text-on-surface-variant sm:text-[1rem] md:text-[1.125rem]">
             Websites, apps, SEO, WhatsApp automation and more — everything your
             business needs to get more customers, save time and grow faster.
           </p>
