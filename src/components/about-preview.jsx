@@ -1,91 +1,124 @@
-import { ArrowUpRight, Laptop, Megaphone, Network } from "lucide-react";
+import Link from "next/link";
 
 export function AboutPreview() {
-  const features = [
+  const reasons = [
     {
-      icon: Laptop,
-      tag: "Core Product",
-      title: "We build digital products and websites.",
+      number: "01",
+      title: "Built Around Your Needs",
       description:
-        "From high-conversion corporate web presences to tailor-made web applications, engineered for maximum performance, responsiveness, and speed.",
+        "We take time to understand your business and tailor our solutions to your goals.",
     },
     {
-      icon: Megaphone,
-      tag: "Growth & Identity",
-      title: "We help businesses present and promote their services.",
+      number: "02",
+      title: "Simple, Clear Communication",
       description:
-        "Sharp visual collateral, targeted SEO strategies, and tailored commercial media designed to capture inbound market share and build trust.",
+        "No unnecessary complexity or confusing technical jargon. Just clear conversations and practical solutions.",
     },
     {
-      icon: Network,
-      tag: "Operations",
-      title: "We connect useful tools to simplify business operations.",
+      number: "03",
+      title: "One Partner, Less Hassle",
       description:
-        "Automating customer workflows, WhatsApp conversational funnels, and CRM integrations to eliminate repetitive operational overhead.",
+        "Work with one team that understands your business and helps bring your digital needs together.",
+    },
+    {
+      number: "04",
+      title: "Here Beyond Launch",
+      description:
+        "We aim to build lasting relationships and provide ongoing support as your business evolves.",
     },
   ];
 
   return (
     <section
       id="about"
-      className="w-full py-20 md:py-28 px-gutter bg-surface-container-low border-y border-outline-variant transition-colors duration-200"
+      className="relative w-full overflow-hidden border-y border-outline-variant bg-surface-container-low px-gutter py-20 transition-colors duration-200 md:py-28"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-lg">
-          <div className="max-w-2xl flex flex-col items-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-              <span className="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-semibold">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, color-mix(in srgb, var(--outline-variant) 65%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--outline-variant) 65%, transparent) 1px, transparent 1px)",
+          backgroundSize: "42px 42px",
+          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.15))",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+          <div className="max-w-3xl">
+            {/* <div className="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface-container px-3 py-1.5 shadow-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary-container" />
+              <span className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-primary-container font-semibold">
                 ABOUT WORK4U
               </span>
-            </div>
-            <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-semibold tracking-tight">
-              Your digital partner.
+            </div> */}
+
+            <h2 className="mt-5 max-w-2xl font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight md:text-headline-lg md:font-headline-lg lg:text-[2.4rem] lg:leading-[1.05] lg:tracking-[-0.04em]">
+              Your Business Matters. <span className="text-primary-container">That's Why We Work for You.</span>
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-4 leading-relaxed">
-              Work4U Digital Solutions helps businesses build their online
-              presence, create professional content and simplify everyday work
-              through practical digital solutions.
+
+            <p className="mt-5 max-w-2xl text-body-xl leading-relaxed text-on-surface-variant lg:text-[1.125rem] lg:leading-8">
+              At Work4U Digital Solutions, we believe technology should make running a
+              business easier, not more complicated. We work closely with you to
+              understand your goals, find the right solutions, and turn your ideas into
+              meaningful digital experiences. From strategy and design to websites,
+              automation, and ongoing support, we help bring clarity and momentum to the
+              digital side of your business.
             </p>
+
+            <p className="mt-4 max-w-2xl text-body-md leading-relaxed text-on-surface-variant lg:text-[1.05rem] lg:leading-8">
+              <span className="font-semibold text-primary">Your goals guide our work.</span>{" "}
+              Your customers inspire our approach. And your growth is what we work towards.
+              We focus on practical, sustainable solutions that fit your business today
+              and support where you want to go next.
+            </p>
+
+            <Link
+              href="/about"
+              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary-container px-5 py-3 text-label-lg font-semibold text-on-primary-fixed shadow-sm transition-all duration-200 hover:brightness-105 active:scale-[0.99]"
+            >
+              Get to Know Us
+              <span aria-hidden="true">↗</span>
+            </Link>
           </div>
 
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg font-semibold hover:text-primary-container transition-colors group shrink-0"
-          >
-            Learn More About Us{" "}
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
-        </div>
-
-        {/* 3 Feature Points */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {features.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={idx}
-                className="flex flex-col p-space-lg rounded-lg bg-surface-container border border-outline-variant group hover:border-primary-container/60 hover:-translate-y-1 transition-all duration-300 shadow-sm"
-              >
-                <div className="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container mb-6 border border-outline-variant group-hover:scale-110 transition-transform">
-                  <Icon className="h-6 w-6 text-primary-container" />
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                  <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">
-                    {feature.tag}
-                  </span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-primary font-semibold leading-snug">
-                  {feature.title}
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
-                  {feature.description}
-                </p>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-4xl bg-primary-container/5 blur-2xl" aria-hidden="true" />
+            <div className="relative rounded-2xl border border-outline-variant bg-surface-container p-4 shadow-md md:p-6">
+              <div className="mb-4 flex items-center justify-between border-b border-outline-variant/60 pb-3">
+                <span className="font-label-sm text-label-sm uppercase tracking-[0.18em] text-on-surface-variant">
+                  Why choose us
+                </span>
+                <span className="font-label-md text-label-md text-primary-container">
+                  Partnership
+                </span>
               </div>
-            );
-          })}
+
+              <div className="grid gap-3">
+                {reasons.map((reason) => (
+                  <div
+                    key={reason.number}
+                    className="rounded-xl border border-outline-variant/70 bg-surface-container-low p-4 transition-colors duration-200 hover:border-primary-container/50 hover:bg-surface-container"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="font-label-md text-label-md text-primary-container">
+                        {reason.number}
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="font-headline-sm text-headline-sm text-primary font-semibold leading-tight">
+                          {reason.title}
+                        </h3>
+                        <p className="mt-2 font-body-sm text-body-sm leading-relaxed text-on-surface-variant">
+                          {reason.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -73,11 +73,13 @@ export function HeroSection() {
             <div
               key={service}
               className={[
-                "flex items-center justify-center px-3 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-on-surface-variant md:text-[0.7rem] lg:text-[0.76rem]",
+                "group flex items-center justify-center px-3 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-on-surface-variant transition-all duration-200 ease-out hover:-translate-y-0.5 hover:text-primary hover:bg-surface-container/80 md:text-[0.7rem] lg:text-[0.76rem]",
                 index !== 0 ? "border-t border-outline-variant/70 sm:border-t-0 sm:border-l sm:border-outline-variant/70 lg:border-t-0" : "",
               ].join(" ")}
             >
-              {service}
+              <span className="relative flex items-center justify-center after:absolute after:-bottom-1 after:h-px after:w-0 after:bg-primary-container after:transition-all after:duration-200 group-hover:after:w-full">
+                {service}
+              </span>
             </div>
           ))}
         </div>

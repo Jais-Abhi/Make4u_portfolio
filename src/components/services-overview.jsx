@@ -52,18 +52,17 @@ export function ServicesOverview() {
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         {/* Section Header */}
         <div className="max-w-3xl flex flex-col items-start">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant mb-4">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
             <span className="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-semibold">
               OUR SERVICES
             </span>
-          </div>
+          </div> */}
           <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-semibold tracking-tight">
-            What can we help you with?
-          </h2>
+              What does your business need?          
+              </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant mt-3 leading-relaxed">
-            Choose the service your business needs. Explore what&apos;s
-            included, see the available options and request a quote.
+            From building your website to growing your online presence, we help you find the right digital solutions for your business. Explore our services and get a quote tailored to your needs.
           </p>
         </div>
 

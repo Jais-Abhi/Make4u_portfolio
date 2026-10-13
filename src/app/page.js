@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section";
 import { AboutPreview } from "@/components/about-preview";
 import { ServicesOverview } from "@/components/services-overview";
 import { WhyChooseMake4U } from "@/components/why-choose-make4u";
+import { HowWeWork } from "@/components/how-we-work";
 import { ContactPreview } from "@/components/contact-preview";
 import { Footer } from "@/components/footer";
 
@@ -23,11 +24,15 @@ export default function Home() {
 
           {/* Section C: Services Overview */}
           <ServicesOverview />
+          
+          {/* Section E: How We Work */}
+          <HowWeWork />
 
           {/* Section D: Why Choose Make4U FAQs */}
           <WhyChooseMake4U />
 
-          {/* Section E: Contact Preview with Interactive Form */}
+
+          {/* Section F: Contact Preview with Interactive Form */}
           <ContactPreview />
         </div>
       </main>
