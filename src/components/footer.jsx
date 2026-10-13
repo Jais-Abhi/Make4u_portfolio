@@ -208,7 +208,7 @@ export function Footer() {
         </div>
 
         <div className="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-          <p>© 2025 Work4U Digital Solutions. All rights reserved.</p>
+          <p>© 2026 Work4U Digital Solutions. All rights reserved.</p>
           <div className="flex items-center gap-space-lg font-label-sm text-label-sm">
             <a href="#" className="hover:text-on-surface transition-colors">
               Privacy Policy

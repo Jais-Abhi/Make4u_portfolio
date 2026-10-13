@@ -1,68 +1,82 @@
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 
+const serviceItems = [
+  "Websites & Apps",
+  "SEO ",
+  "Graphic Design & Video Editing",
+  "Photography & Videography",
+  "AI Chatbots & Agents",
+  "Business Automation",
+];
+
 export function HeroSection() {
   return (
-    <section className="relative w-full pt-4 md:pt-6 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
-      <div className="max-w-7xl xl:max-w-[1536px] mx-auto flex flex-col">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
-          {/* Left Column: Value Proposition & CTAs */}
-          <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant mb-6 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-              <span className="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-semibold">
-                DIGITAL SOLUTIONS FOR BUSINESSES
-              </span>
-            </div>
+    <section className="hero-section relative isolate w-full overflow-hidden border-b border-outline-variant/80 bg-background">
+      <div className="hero-grid" aria-hidden="true" />
 
-            <h1 className="font-display text-display-mobile md:text-display text-primary tracking-tight font-bold mb-4">
-              Click. Connect. Convert
-              <span className="text-primary-container">.</span>
-            </h1>
+      <div className="relative mx-auto max-w-[1600px] px-4 pb-10 pt-5 sm:px-6 md:pb-12 md:pt-6 lg:px-8 xl:px-12">
+        <div className="mb-6 flex flex-col gap-4 sm:mb-8 md:mb-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+          {/* <div className="inline-flex w-fit items-center gap-2 rounded-full border border-outline-variant bg-surface-container-low px-3 py-1.5 shadow-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-container" />
+            <span className="text-label-sm font-semibold uppercase tracking-[0.18em] text-primary-container">
+              DIGITAL SOLUTIONS FOR BUSINESSES
+            </span>
+          </div> */}
 
-            <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-semibold tracking-tight mb-4">
-              Simple digital solutions for your business.
-            </h2>
-
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-8">
-              We build websites, create digital content and connect useful tools
-              to help businesses grow online and work more efficiently.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:brightness-105 active:scale-95 transition-all shadow-sm group"
-              >
-                Start a Project{" "}
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-surface-container border border-outline-variant text-primary font-label-lg text-label-lg font-medium hover:border-secondary hover:bg-surface-bright transition-all group"
-              >
-                Explore Our Services{" "}
-                <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-              </a>
-            </div>
+          <div className="self-start text-[0.8rem] font-black uppercase tracking-[0.22em] text-on-surface-variant md:text-[0.9rem] lg:self-auto">
+            <span className="text-primary-container">CLICK.</span> CONNECT. CONVERT.
           </div>
+        </div>
 
-          {/* Right Column: Hero Visual Mockup */}
-          <div className="lg:col-span-7 xl:col-span-7 w-full flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-2xl lg:max-w-none lg:w-[112%] xl:w-[122%] lg:-mr-6 xl:-mr-12 group">
-              {/* Subtle ambient glow behind the transparent graphic */}
-              <div
-                className="absolute inset-0 bg-gradient-to-tr from-primary-container/25 to-secondary-container/25 rounded-full blur-3xl scale-110 -z-10 pointer-events-none opacity-70 dark:opacity-50 transition-opacity duration-500 group-hover:opacity-90"
-                aria-hidden="true"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]"
-                alt="Modern digital solutions dashboard and mobile interface preview"
-                src="/hero.png"
-              />
+        <div className="max-w-[1350px] pb-7 md:pb-10 lg:pb-12">
+          <h1 className="max-w-[1200px] text-balance text-[clamp(3.3rem,7vw,8.5rem)] font-black leading-[0.82] tracking-[-0.065em] text-primary">
+            WE BUILD DIGITAL
+            <span className="mt-2 block text-primary md:mt-3">
+              <span className="text-primary-container">SOLUTIONS</span> THAT
+            </span>
+            <span className="mt-2 block text-primary md:mt-3">GROW YOUR BUSINESS.</span>
+          </h1>
+        </div>
+
+        <div className="max-w-[760px]">
+          <p className="text-body-lg leading-relaxed text-on-surface-variant md:text-[1.125rem]">
+            Websites, apps, SEO, WhatsApp automation and more — everything your
+            business needs to get more customers, save time and grow faster.
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-container px-5 py-3 text-label-lg font-semibold text-on-primary-fixed shadow-sm transition-all duration-200 hover:brightness-105 active:scale-[0.99]"
+          >
+            Start a Project
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+
+          <a
+            href="#services"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-outline-variant bg-surface-container px-5 py-3 text-label-lg font-medium text-primary transition-all duration-200 hover:border-secondary hover:bg-surface-bright"
+          >
+            Explore Our Services
+            <ArrowDown className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+
+      <div className="relative border-t border-outline-variant/80 bg-background/70 backdrop-blur-[1px]">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-3 gap-0 px-4 py-3 sm:px-6 md:grid-cols-3 lg:grid-cols-6 lg:px-8 xl:px-12">
+          {serviceItems.map((service, index) => (
+            <div
+              key={service}
+              className={[
+                "flex items-center justify-center px-3 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-on-surface-variant md:text-[0.7rem] lg:text-[0.76rem]",
+                index !== 0 ? "border-t border-outline-variant/70 sm:border-t-0 sm:border-l sm:border-outline-variant/70 lg:border-t-0" : "",
+              ].join(" ")}
+            >
+              {service}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

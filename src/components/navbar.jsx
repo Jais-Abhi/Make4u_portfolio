@@ -20,21 +20,23 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
-      <div className="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <div className="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-2 sm:gap-space-md">
         {/* Brand */}
-        <div className="flex items-center gap-space-md shrink-0">
+        <div className="flex items-center gap-2 shrink-0 sm:gap-space-md">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-headline-sm text-headline-sm text-primary tracking-tight group"
+            className="flex items-center gap-1.5 text-primary tracking-tight group sm:gap-2.5"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/portfolio_logo.png"
               alt="Work4U Logo"
-              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-8"
             />
-            <span>Work4U Digital Solutions</span>
-            <span className="inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
+            <span className="text-[0.7rem] font-semibold leading-none sm:text-headline-sm sm:font-headline-sm">
+              Work4U Digital Solutions
+            </span>
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-container ml-0.5 sm:w-2 sm:h-2"></span>
           </Link>
         </div>
 
@@ -111,9 +113,9 @@ export function Navbar() {
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4 sm:h-5 sm:w-5" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
             )}
           </button>
         </div>
@@ -121,11 +123,11 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-surface-variant bg-surface/98 backdrop-blur-2xl px-gutter py-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-2">
+        <div className="lg:hidden border-b border-surface-variant bg-surface/98 backdrop-blur-2xl px-gutter py-5 flex flex-col gap-3 animate-in fade-in slide-in-from-top-2">
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className={`py-2 ${
+            className={`py-2 text-sm ${
               isHome
                 ? "text-primary-container font-semibold"
                 : "text-on-surface-variant hover:text-on-surface font-medium"
@@ -136,7 +138,7 @@ export function Navbar() {
           <Link
             href="/about"
             onClick={() => setMobileMenuOpen(false)}
-            className={`py-2 ${
+            className={`py-2 text-sm ${
               isAbout
                 ? "text-primary-container font-semibold"
                 : "text-on-surface-variant hover:text-on-surface font-medium"
@@ -147,7 +149,7 @@ export function Navbar() {
           <Link
             href="/services"
             onClick={() => setMobileMenuOpen(false)}
-            className={`py-2 ${
+            className={`py-2 text-sm ${
               isServices
                 ? "text-primary-container font-semibold"
                 : "text-on-surface-variant hover:text-on-surface font-medium"
@@ -158,7 +160,7 @@ export function Navbar() {
           <Link
             href="/maintenance-plans"
             onClick={() => setMobileMenuOpen(false)}
-            className={`py-2 ${
+            className={`py-2 text-sm ${
               isMaintenance
                 ? "text-primary-container font-semibold"
                 : "text-on-surface-variant hover:text-on-surface font-medium"
@@ -169,7 +171,7 @@ export function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className={`py-2 ${
+            className={`py-2 text-sm ${
               isContact
                 ? "text-primary-container font-semibold"
                 : "text-on-surface-variant hover:text-on-surface font-medium"
@@ -181,7 +183,7 @@ export function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center py-2.5 rounded-lg bg-primary-container text-on-primary-fixed font-semibold"
+              className="w-full inline-flex items-center justify-center py-2.5 rounded-lg bg-primary-container text-on-primary-fixed text-sm font-semibold"
             >
               Get a Quote
             </Link>

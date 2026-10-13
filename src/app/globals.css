@@ -85,6 +85,41 @@ body {
   overflow-x: hidden;
 }
 
+.hero-section {
+  position: relative;
+  background-color: var(--background);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--background);
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--outline-variant) 72%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--outline-variant) 72%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center center;
+  opacity: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .hero-grid {
+    background-size: 36px 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section,
+  .hero-section * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
 /* Material Symbols configuration */
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
