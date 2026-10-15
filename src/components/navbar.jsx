@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -21,6 +22,9 @@ export function Navbar() {
   const [servicesMenuOpen, setServicesMenuOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
   const pathname = usePathname();
+  const servicesTriggerRef = React.useRef(null);
+  const closeTimeoutRef = React.useRef();
+  const [dropdownPos, setDropdownPos] = React.useState({ left: 0, top: 0 });
 
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
@@ -68,6 +72,24 @@ export function Navbar() {
     },
   ];
 
+  function Portal({ children }) {
+    const [mounted, setMounted] = React.useState(false);
+
+    React.useEffect(() => {
+      setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+
+    return createPortal(children, document.body);
+  }
+
+  React.useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden border-b border-surface-variant bg-surface/90 backdrop-blur-xl transition-colors duration-200">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-space-md px-gutter">
@@ -113,9 +135,21 @@ export function Navbar() {
             About
           </Link>
           <div
+            ref={servicesTriggerRef}
             className="relative hidden lg:block"
-            onMouseEnter={() => setServicesMenuOpen(true)}
-            onMouseLeave={() => setServicesMenuOpen(false)}
+            onMouseEnter={() => {
+              if (closeTimeoutRef.current) {
+                clearTimeout(closeTimeoutRef.current);
+              }
+              const rect = servicesTriggerRef.current?.getBoundingClientRect();
+              if (rect) {
+                setDropdownPos({ left: rect.left + rect.width / 2, top: rect.bottom + 8 });
+              }
+              setServicesMenuOpen(true);
+            }}
+            onMouseLeave={() => {
+              closeTimeoutRef.current = setTimeout(() => setServicesMenuOpen(false), 150);
+            }}
           >
             <div className="flex items-center gap-1 px-2 py-3 text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors">
               <button
@@ -133,8 +167,18 @@ export function Navbar() {
             </div>
 
             {servicesMenuOpen && (
-              <div className="absolute left-1/2 top-full z-50 mt-0 w-[min(700px,calc(100vw-2rem))] -translate-x-1/2 rounded-[28px] border border-outline-variant bg-surface-container/95 p-3 shadow-[0_18px_45px_rgba(18,29,22,0.18)] backdrop-blur-xl">
-                <div className="grid grid-cols-2 gap-2.5">
+              <Portal>
+                <div
+                  onMouseEnter={() => {
+                    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                  }}
+                  onMouseLeave={() => {
+                    closeTimeoutRef.current = setTimeout(() => setServicesMenuOpen(false), 150);
+                  }}
+                  style={{ left: dropdownPos.left, top: dropdownPos.top }}
+                  className="fixed z-50 w-[min(700px,calc(100vw-2rem))] -translate-x-1/2 rounded-[28px] border border-outline-variant bg-surface-container/95 p-3 shadow-[0_18px_45px_rgba(18,29,22,0.18)] backdrop-blur-xl"
+                >
+                  <div className="grid grid-cols-2 gap-2.5">
                   {serviceOptions.map((service) => {
                     const Icon = service.icon;
 
@@ -159,8 +203,9 @@ export function Navbar() {
                       </Link>
                     );
                   })}
+                  </div>
                 </div>
-              </div>
+              </Portal>
             )}
           </div>
           <Link
