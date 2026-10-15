@@ -69,10 +69,10 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
-      <div className="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+    <header className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden border-b border-surface-variant bg-surface/90 backdrop-blur-xl transition-colors duration-200">
+      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-space-md px-gutter">
         {/* Brand */}
-        <div className="flex items-center gap-2 shrink-0 lg:flex lg:gap-space-md">
+        <div className="flex min-w-0 items-center gap-2 shrink-0 lg:flex lg:gap-space-md">
           <Link
             href="/"
             className="flex min-w-0 items-center gap-2.5 font-headline-sm text-headline-sm text-primary tracking-tight group lg:flex-row"
@@ -83,7 +83,7 @@ export function Navbar() {
               alt="Make4U Logo"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-[0.9rem] leading-none sm:text-[0.95rem] md:text-[1rem] lg:text-[1.3rem] lg:font-semibold lg:leading-none">
+            <span className="truncate text-[0.9rem] leading-none sm:text-[0.95rem] md:text-[1rem] lg:text-[1.3rem] lg:font-semibold lg:leading-none">
               Make4U Digital Solutions
             </span>
             <span className="hidden sm:inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
@@ -91,7 +91,7 @@ export function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-space-lg">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-space-lg lg:flex">
           <Link
             href="/"
             className={`transition-colors ${
@@ -133,7 +133,7 @@ export function Navbar() {
             </div>
 
             {servicesMenuOpen && (
-              <div className="absolute left-1/2 top-full z-50 mt-0 w-[700px] -translate-x-1/2 rounded-[28px] border border-outline-variant bg-surface-container/95 p-3 shadow-[0_18px_45px_rgba(18,29,22,0.18)] backdrop-blur-xl">
+              <div className="absolute left-1/2 top-full z-50 mt-0 w-[min(700px,calc(100vw-2rem))] -translate-x-1/2 rounded-[28px] border border-outline-variant bg-surface-container/95 p-3 shadow-[0_18px_45px_rgba(18,29,22,0.18)] backdrop-blur-xl">
                 <div className="grid grid-cols-2 gap-2.5">
                   {serviceOptions.map((service) => {
                     const Icon = service.icon;

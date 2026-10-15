@@ -3,25 +3,25 @@ import { ArrowRight, Check } from "lucide-react";
 
 export function WebsitePricing({ packages }) {
   return (
-    <section id="pricing" className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
+    <section id="pricing" className="mx-auto max-w-7xl px-gutter py-12 md:py-20">
       <div className="max-w-2xl">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C8F169]">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#C8F169] sm:text-[10px]">
           Straightforward pricing
         </p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[color:var(--primary)] md:text-4xl">
+        <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--primary)] sm:text-3xl md:text-4xl">
           Choose the Right Website Package
         </h2>
-        <p className="mt-4 text-base leading-relaxed text-[color:var(--on-surface-variant)]">
+        <p className="mt-4 text-sm leading-relaxed text-[color:var(--on-surface-variant)] sm:text-base">
           Whether you need a simple online presence or a custom website, choose a package that matches your business goals.
         </p>
       </div>
 
-      <div className="mt-8 grid gap-5 xl:grid-cols-3">
+      <div className="mt-8 grid gap-4 xl:grid-cols-3">
         {packages.map((plan) => (
           <div
             key={plan.id}
             className={[
-              "relative rounded-[28px] border p-6",
+              "relative rounded-[24px] border p-4 sm:rounded-[28px] sm:p-6",
               plan.featured
                 ? "border-[#C8F169] bg-[color:var(--surface-container)] shadow-[0_18px_45px_rgba(200,241,105,0.08)]"
                 : "border-[color:var(--outline-variant)] bg-[color:var(--surface-container)]",

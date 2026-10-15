@@ -81,14 +81,18 @@ export default function WebsiteDevelopmentPage() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid min-w-0 gap-5 md:grid-cols-2 xl:grid-cols-3">
             {additionalCosts.map((item) => (
-              <div key={item.title} className="rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[color:var(--primary-container)]/10 text-[color:var(--primary-container)]">
-                  <ShieldCheck className="h-5 w-5" />
+              <div key={item.title} className="min-w-0 rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5">
+                <div className="mb-4 flex min-w-0 items-start gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--primary-container)]/10 text-[color:var(--primary-container)]">
+                    <ShieldCheck className="h-5 w-5" />
+                  </div>
+                  <h3 className="min-w-0 flex-1 text-base font-semibold leading-snug text-[color:var(--primary)] break-words md:text-lg">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-semibold text-[color:var(--primary)]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
+                <p className="mt-0 text-sm leading-relaxed text-[color:var(--on-surface-variant)] break-words">
                   {item.text}
                 </p>
               </div>

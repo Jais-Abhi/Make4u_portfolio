@@ -40,12 +40,12 @@ export const metadata = {
 
 function AppMockup() {
   return (
-    <div className="relative mx-auto w-full max-w-[430px]">
-      <div className="absolute -left-6 top-10 h-52 w-52 rounded-full bg-[#C8F169]/12 blur-3xl" />
-      <div className="absolute -right-10 bottom-8 h-48 w-48 rounded-full bg-[#7DD3FC]/10 blur-3xl" />
+    <div className="relative mx-auto w-full max-w-[260px] overflow-hidden sm:max-w-[430px]">
+      <div className="absolute -left-6 top-10 h-32 w-32 rounded-full bg-[#C8F169]/12 blur-3xl sm:h-52 sm:w-52" />
+      <div className="absolute -right-10 bottom-8 h-28 w-28 rounded-full bg-[#7DD3FC]/10 blur-3xl sm:h-48 sm:w-48" />
 
-      <div className="relative mx-auto flex items-center justify-center gap-4">
-        <div className="w-[168px] rounded-[32px] border border-[#3b3f38] bg-[#1d201d] p-3 shadow-[0_22px_60px_rgba(0,0,0,0.35)]">
+      <div className="relative mx-auto flex scale-[0.82] items-center justify-center gap-2 sm:scale-100 sm:gap-4">
+        <div className="w-[140px] rounded-[28px] border border-[#3b3f38] bg-[#1d201d] p-2.5 shadow-[0_22px_60px_rgba(0,0,0,0.35)] sm:w-[168px] sm:rounded-[32px] sm:p-3">
           <div className="rounded-[24px] bg-[#2b2f2a] p-3 text-left">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#B8BDB5]">Booking</span>
@@ -83,8 +83,8 @@ function AppMockup() {
           </div>
         </div>
 
-        <div className="w-[206px] rounded-[34px] border border-[#3b3f38] bg-[#111412] p-3 shadow-[0_28px_70px_rgba(0,0,0,0.42)]">
-          <div className="rounded-[28px] bg-[#1d201d] p-3">
+        <div className="w-[170px] rounded-[28px] border border-[#3b3f38] bg-[#111412] p-2.5 shadow-[0_28px_70px_rgba(0,0,0,0.42)] sm:w-[206px] sm:rounded-[34px] sm:p-3">
+          <div className="rounded-[24px] bg-[#1d201d] p-2.5 sm:rounded-[28px] sm:p-3">
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#C8F169]/20 text-[#C8F169]">
@@ -154,17 +154,17 @@ export default function AppDevelopmentPage() {
         </div>
       </nav>
 
-      <section className="relative mx-auto max-w-7xl px-gutter pb-14 pt-10 md:pb-20 md:pt-14">
+      <section className="relative mx-auto max-w-7xl overflow-x-hidden px-gutter pb-14 pt-10 md:pb-20 md:pt-14">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(200,241,105,0.12),_transparent_35%)]" />
-        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           <div className="max-w-xl">
             <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#2d4d12] dark:text-[#C8F169]">
               App Development
             </p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#111d14] dark:text-[color:var(--primary)] sm:text-5xl xl:text-6xl">
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-[#111d14] dark:text-[color:var(--primary)] sm:text-4xl md:text-5xl xl:text-6xl">
               Apps Built Around Your Business.
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-[color:var(--on-surface-variant)] md:text-lg">
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-[color:var(--on-surface-variant)] sm:text-base md:text-lg">
               From customer-facing mobile apps to business management tools, we build digital products designed around your goals.
             </p>
 
@@ -183,7 +183,7 @@ export default function AppDevelopmentPage() {
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-[color:var(--on-surface-variant)]">
+            <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-[color:var(--on-surface-variant)] sm:text-sm">
               <span className="inline-flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
                   <Check className="h-3.5 w-3.5 stroke-[3]" />
@@ -199,13 +199,13 @@ export default function AppDevelopmentPage() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-2 flex justify-center lg:mt-0">
             <AppMockup />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
+      <section className="mx-auto max-w-7xl overflow-x-hidden px-gutter py-16 md:py-20">
         <div className="max-w-2xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169]">
             What we build
@@ -215,20 +215,24 @@ export default function AppDevelopmentPage() {
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
           {appSolutions.map((item) => {
             const Icon = iconMap[item.icon];
 
             return (
               <div
                 key={item.title}
-                className="rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5 shadow-[0_16px_38px_rgba(0,0,0,0.08)]"
+                className="min-w-0 rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5 shadow-[0_16px_38px_rgba(0,0,0,0.08)]"
               >
-                <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-2xl ${item.accent}`}>
-                  <Icon className="h-5 w-5" />
+                <div className="mb-4 flex min-w-0 items-start gap-3">
+                  <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${item.accent}`}>
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="min-w-0 flex-1 text-base font-semibold leading-snug text-[color:var(--primary)] break-words md:text-xl">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold text-[color:var(--primary)]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
+                <p className="mt-0 text-sm leading-relaxed text-[color:var(--on-surface-variant)] break-words">
                   {item.description}
                 </p>
               </div>
@@ -238,7 +242,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       <section className="border-y border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)]/80 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-gutter">
+        <div className="mx-auto max-w-7xl overflow-x-hidden px-gutter">
           <div className="max-w-xl">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169]">
               Platforms and tech
@@ -248,17 +252,21 @@ export default function AppDevelopmentPage() {
             </h2>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid min-w-0 gap-4 md:grid-cols-3">
             {platformOptions.map((platform) => (
               <div
                 key={platform.title}
-                className="rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5"
+                className="min-w-0 rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5"
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
-                  <Smartphone className="h-5 w-5" />
+                <div className="mb-4 flex min-w-0 items-start gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
+                    <Smartphone className="h-5 w-5" />
+                  </div>
+                  <h3 className="min-w-0 flex-1 text-base font-semibold leading-snug text-[#111d14] break-words dark:text-[color:var(--primary)] md:text-xl">
+                    {platform.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold text-[#111d14] dark:text-[color:var(--primary)]">{platform.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
+                <p className="mt-0 text-sm leading-relaxed text-[color:var(--on-surface-variant)] break-words">
                   {platform.description}
                 </p>
               </div>
@@ -271,7 +279,7 @@ export default function AppDevelopmentPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
+      <section className="mx-auto max-w-7xl overflow-x-hidden px-gutter py-16 md:py-20">
         <div className="max-w-xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169]">
             Process
@@ -281,17 +289,21 @@ export default function AppDevelopmentPage() {
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid min-w-0 gap-4 md:grid-cols-4">
           {processSteps.map((process, index) => (
-            <div key={process.step} className="relative rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5">
+            <div key={process.step} className="relative min-w-0 rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5">
               {index < processSteps.length - 1 && (
                 <div className="pointer-events-none absolute -right-2 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-[color:var(--outline-variant)] md:block" />
               )}
-              <div className="mb-4 inline-flex rounded-full bg-[#2d4d12]/12 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
-                {process.step}
+              <div className="mb-4 flex min-w-0 items-center gap-3">
+                <div className="inline-flex shrink-0 rounded-full bg-[#2d4d12]/12 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
+                  {process.step}
+                </div>
+                <h3 className="min-w-0 flex-1 text-base font-semibold leading-snug text-[#111d14] break-words dark:text-[color:var(--primary)] md:text-xl">
+                  {process.title}
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold text-[#111d14] dark:text-[color:var(--primary)]">{process.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
+              <p className="mt-0 text-sm leading-relaxed text-[color:var(--on-surface-variant)] break-words">
                 {process.text}
               </p>
             </div>
@@ -453,7 +465,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       <section className="border-y border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)]/80 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-gutter">
+        <div className="mx-auto max-w-7xl overflow-x-hidden px-gutter">
           <div className="max-w-2xl">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169]">
               Transparency
@@ -463,11 +475,13 @@ export default function AppDevelopmentPage() {
             </h2>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-8 grid min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-5">
             {transparencyNotes.map((item) => (
-              <div key={item} className="rounded-[20px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-4 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
-                <ShieldCheck className="mb-3 h-5 w-5 text-[#2d4d12] dark:text-[#C8F169]" />
-                <p>{item}</p>
+              <div key={item} className="min-w-0 rounded-[20px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-4 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
+                <div className="mb-3 flex min-w-0 items-start gap-3">
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#2d4d12] dark:text-[#C8F169]" />
+                  <p className="min-w-0 flex-1 break-words">{item}</p>
+                </div>
               </div>
             ))}
           </div>
