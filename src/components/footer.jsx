@@ -69,15 +69,6 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/pricing"
-                  className="text-on-surface-variant hover:text-on-surface transition-colors"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
-                <Link
                   href="/maintenance-plans"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
@@ -105,7 +96,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services/website-development"
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Website Development
@@ -114,7 +105,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services/app-development"
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   App Development
@@ -123,7 +114,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services/seo-digital-growth"
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   SEO &amp; Digital Growth
@@ -132,7 +123,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services/graphic-design-video-editing"
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Graphic Design &amp; Video Editing
@@ -141,7 +132,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services/photography-videography"
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Photography &amp; Videography
@@ -150,7 +141,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services/ai-business-integration"
+                  href="/services"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   AI &amp; Business Integration

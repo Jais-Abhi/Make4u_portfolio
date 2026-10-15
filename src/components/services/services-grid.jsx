@@ -24,7 +24,6 @@ export function ServicesGrid() {
         "Secure E-commerce Systems",
       ],
       ctaText: "Explore Website Development",
-      href: "/services/website-development",
     },
     {
       badge: "Engineering",
@@ -39,7 +38,6 @@ export function ServicesGrid() {
         "Custom Dashboards & Database Integrations",
       ],
       ctaText: "Explore App Development",
-      href: "/services/app-development",
     },
     {
       badge: "Marketing",
@@ -54,7 +52,6 @@ export function ServicesGrid() {
         "Local Google Business Rank Domination",
       ],
       ctaText: "Explore SEO Services",
-      href: "/services/seo-digital-growth",
     },
     {
       badge: "Creative",
@@ -69,7 +66,6 @@ export function ServicesGrid() {
         "Short-Form Video Editing (Reels, TikTok)",
       ],
       ctaText: "Explore Creative Services",
-      href: "/services/graphic-design-video-editing",
     },
     {
       badge: "Media",
@@ -84,7 +80,6 @@ export function ServicesGrid() {
         "Full Commercial Video Production & Color Grading",
       ],
       ctaText: "Explore Photography & Videography",
-      href: "/services/photography-videography",
     },
     {
       badge: "Automation",
@@ -99,7 +94,6 @@ export function ServicesGrid() {
         "End-to-End Zapier & Make Workflow Pipelines",
       ],
       ctaText: "Explore AI & Integration",
-      href: "/services/ai-business-integration",
     },
   ];
 
@@ -156,7 +150,7 @@ export function ServicesGrid() {
               {/* Bottom Action Button */}
               <div className="pt-8 mt-6">
                 <Link
-                  href={service.href || "/contact"}
+                  href="/contact"
                   className="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/40 text-primary font-label-md text-label-md group-hover:bg-primary-container group-hover:text-on-primary-fixed transition-all shadow-sm"
                 >
                   <span>{service.ctaText}</span>

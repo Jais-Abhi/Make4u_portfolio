@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +42,11 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex min-h-screen flex-col bg-background text-on-surface antialiased transition-colors duration-200">
+            <Navbar />
+            <main className="w-full flex-1 bg-background pt-20">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
