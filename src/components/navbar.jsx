@@ -30,11 +30,11 @@ export function Navbar() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/portfolio_logo.png"
-              alt="Work4U Logo"
+              alt="Make4U Logo"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span className="text-[0.9rem] leading-none sm:text-[0.95rem] md:text-[1rem] lg:text-[1.3rem] lg:font-semibold lg:leading-none">
-              Work4U Digital Solutions
+              Make4U Digital Solutions
             </span>
             <span className="hidden sm:inline-block w-2 h-2 rounded-full bg-primary-container ml-0.5"></span>
           </Link>

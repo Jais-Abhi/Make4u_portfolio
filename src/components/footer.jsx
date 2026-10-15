@@ -18,11 +18,11 @@ export function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/portfolio_logo.png"
-                alt="Work4U Logo"
+                alt="Make4U Logo"
                 className="h-7 w-auto object-contain"
               />
               <span className="font-headline-sm text-headline-sm text-primary tracking-tight">
-                Work4U<span className="text-primary-container">.</span>
+                Make4U<span className="text-primary-container">.</span>
               </span>
             </div>
             <p className="font-label-md text-label-md text-primary-container uppercase tracking-widest font-semibold">
@@ -159,10 +159,10 @@ export function Footer() {
               <div className="flex items-center gap-2 text-on-surface-variant">
                 <Mail className="h-4 w-4 text-primary-container" />
                 <a
-                  href="mailto:hello@work4u.example"
+                  href="mailto:hello@make4u.example"
                   className="hover:text-on-surface transition-colors"
                 >
-                  hello@work4u.example
+                  hello@make4u.example
                 </a>
               </div>
               <div className="flex items-center gap-2 text-on-surface-variant">
@@ -208,7 +208,7 @@ export function Footer() {
         </div>
 
         <div className="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-          <p>© 2026 Work4U Digital Solutions. All rights reserved.</p>
+          <p>© 2026 Make4U Digital Solutions. All rights reserved.</p>
           <div className="flex items-center gap-space-lg font-label-sm text-label-sm">
             <a href="#" className="hover:text-on-surface transition-colors">
               Privacy Policy

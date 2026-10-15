@@ -29,7 +29,7 @@ export function AboutHero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-8 text-on-surface-variant md:text-lg">
-              Work4U Digital Solutions brings strategy, design, development, and
+              Make4U Digital Solutions brings strategy, design, development, and
               support together to help businesses build a digital presence that feels
               intentional, consistent, and easy to trust.
             </p>

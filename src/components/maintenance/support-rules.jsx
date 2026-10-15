@@ -32,7 +32,7 @@ export function SupportRules() {
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Submit directly via your assigned Client Ticket Portal or email{" "}
               <code className="text-primary-container bg-surface-container-low px-1.5 py-0.5 rounded font-mono text-xs">
-                support@work4u.example
+                support@make4u.example
               </code>{" "}
               with visual annotations for instant dispatch.
             </p>

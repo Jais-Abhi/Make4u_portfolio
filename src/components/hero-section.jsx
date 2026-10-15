@@ -2,12 +2,14 @@ import { ArrowUpRight, ArrowDown } from "lucide-react";
 
 const serviceItems = [
   "Websites & Apps",
-  "SEO ",
+  "SEO",
   "Graphic Design & Video Editing",
   "Photography & Videography",
   "AI Chatbots & Agents",
   "Business Automation",
 ];
+
+const marqueeItems = [...serviceItems, ...serviceItems];
 
 export function HeroSection() {
   return (
@@ -23,9 +25,7 @@ export function HeroSection() {
             </span>
           </div> */}
 
-          <div className="text-center text-[0.62rem] font-black uppercase tracking-[0.18em] text-on-surface-variant sm:text-[0.72rem] md:text-[0.8rem] lg:self-auto">
-            <span className="text-primary-container">CLICK.</span> CONNECT. CONVERT.
-          </div>
+          
         </div>
 
         <div className="mx-auto max-w-[1350px] pb-7 md:pb-10 lg:pb-12">
@@ -40,6 +40,9 @@ export function HeroSection() {
             </span>
           </h1>
         </div>
+        <div className="text-center mb-8 text-[0.62rem] font-black uppercase tracking-[0.18em] text-on-surface-variant sm:text-[0.72rem] md:text-[0.8rem] lg:self-auto">
+            <span className="text-primary-container">CLICK.</span> CONNECT. CONVERT.
+          </div>
 
         <div className="mx-auto max-w-[760px]">
           <p className="text-center text-[0.82rem] leading-relaxed text-on-surface-variant sm:text-[0.9rem] md:text-[1rem] lg:text-[1.05rem]">
@@ -47,6 +50,7 @@ export function HeroSection() {
             business needs to get more customers, save time and grow faster.
           </p>
         </div>
+        
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-center">
           <a
@@ -67,21 +71,25 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative border-t border-outline-variant/80 bg-background/70 backdrop-blur-[1px]">
-        <div className="mx-auto grid max-w-[1600px] grid-cols-3 gap-0 px-4 py-3 sm:px-6 md:grid-cols-3 lg:grid-cols-6 lg:px-8 xl:px-12">
-          {serviceItems.map((service, index) => (
-            <div
-              key={service}
-              className={[
-                "group flex items-center justify-center px-3 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-on-surface-variant transition-all duration-200 ease-out hover:-translate-y-0.5 hover:text-primary hover:bg-surface-container/80 md:text-[0.7rem] lg:text-[0.76rem]",
-                index !== 0 ? "border-t border-outline-variant/70 sm:border-t-0 sm:border-l sm:border-outline-variant/70 lg:border-t-0" : "",
-              ].join(" ")}
-            >
-              <span className="relative flex items-center justify-center after:absolute after:-bottom-1 after:h-px after:w-0 after:bg-primary-container after:transition-all after:duration-200 group-hover:after:w-full">
-                {service}
-              </span>
+      <div className="relative overflow-hidden border-t border-outline-variant/80 bg-background/70 backdrop-blur-[1px]">
+        <div className="mx-auto max-w-[1600px] px-4 py-3 sm:px-6 lg:px-8 xl:px-12">
+          <div className="marquee-mask">
+            <div className="marquee-track flex w-max items-center whitespace-nowrap">
+              {marqueeItems.map((service, index) => (
+                <div
+                  key={`${service}-${index}`}
+                  className={[
+                    "group flex shrink-0 items-center justify-center px-7 py-3 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-on-surface-variant transition-all duration-200 ease-out hover:-translate-y-0.5 hover:text-primary hover:bg-surface-container/80 md:px-8 md:text-[0.7rem] lg:px-15 lg:text-[0.76rem]",
+                    index !== 0 ? "border-t border-outline-variant/70 sm:border-t-0 sm:border-l sm:border-outline-variant/70 lg:border-t-0" : "",
+                  ].join(" ")}
+                >
+                  <span className="relative flex items-center justify-center after:absolute after:-bottom-1 after:h-px after:w-0 after:bg-primary-container after:transition-all after:duration-200 group-hover:after:w-full">
+                    {service}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

@@ -189,10 +189,10 @@ export function ContactSection() {
                       Direct Inbox
                     </span>
                     <a
-                      href="mailto:hello@work4udigital.com"
+                      href="mailto:hello@make4udigital.com"
                       className="font-body-sm text-body-sm text-primary-container hover:underline"
                     >
-                      hello@work4udigital.com
+                      hello@make4udigital.com
                     </a>
                   </div>
                 </div>
@@ -588,7 +588,7 @@ export function ContactSection() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
             <div className="flex flex-col gap-1">
               <span className="font-label-sm text-label-sm text-primary-container tracking-wider uppercase font-semibold">
-                THE WORK4U PLAYBOOK
+                THE MAKE4U PLAYBOOK
               </span>
               <h3 className="font-headline-md text-headline-md text-primary font-bold">
                 What happens next?

@@ -4,7 +4,7 @@ import { MethodologySection } from "@/components/services/methodology-section";
 import { MaintenanceBanner } from "@/components/services/maintenance-banner";
 
 export const metadata = {
-  title: "Services Overview — Work4U Digital Solutions",
+  title: "Services Overview — Make4U Digital Solutions",
   description:
     "Explore our complete range of capabilities: Website Development, App Development, SEO, Graphic Design & Video, Media Production, and AI Automation.",
 };

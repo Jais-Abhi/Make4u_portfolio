@@ -5,9 +5,9 @@ import { AboutProcess } from "@/components/about/about-process";
 import { AboutCta } from "@/components/about/about-cta";
 
 export const metadata = {
-  title: "About — Work4U Digital Solutions",
+  title: "About — Make4U Digital Solutions",
   description:
-    "Learn how Work4U Digital Solutions combines web development, creative services, and business automation to help businesses build a stronger digital presence.",
+    "Learn how Make4U Digital Solutions combines web development, creative services, and business automation to help businesses build a stronger digital presence.",
 };
 
 export default function AboutPage() {

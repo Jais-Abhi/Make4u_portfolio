@@ -7,7 +7,7 @@ import { MaintenanceSteps } from "@/components/maintenance/maintenance-steps";
 import { MaintenanceCta } from "@/components/maintenance/maintenance-cta";
 
 export const metadata = {
-  title: "Maintenance Plans & Subscriptions — Work4U Digital Solutions",
+  title: "Maintenance Plans & Subscriptions — Make4U Digital Solutions",
   description:
     "Keep your digital services running smoothly. Quarterly, Half-Yearly, and Yearly ongoing maintenance plans with security patching, core health, and dedicated support hours.",
 };

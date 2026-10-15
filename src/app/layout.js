@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Work4U Digital Solutions — Click. Connect. Convert.",
+  title: "Make4U Digital Solutions — Click. Connect. Convert.",
   description:
     "We build websites, create digital content, and connect useful tools to help businesses grow online and work more efficiently.",
   icons: {

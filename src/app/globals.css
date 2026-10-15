@@ -115,9 +115,39 @@ body {
   }
 }
 
+.marquee-mask {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee-track {
+  animation: marquee 26s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .marquee-track {
+    animation-duration: 20s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-section,
-  .hero-section * {
+  .hero-section *,
+  .marquee-track {
     scroll-behavior: auto !important;
     animation: none !important;
     transition-duration: 0.01ms !important;

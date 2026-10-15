@@ -56,7 +56,7 @@ export function ContactPreview() {
               </span>
 
               <a
-                href="mailto:hello@work4u.example"
+                href="mailto:hello@make4u.example"
                 className="flex items-center justify-between p-3 rounded bg-surface-container-high border border-outline-variant hover:border-primary-container transition-colors group"
               >
                 <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export function ContactPreview() {
                       Email Inquiry
                     </span>
                     <span className="font-body-sm text-body-sm text-primary font-medium">
-                      hello@work4u.example
+                      hello@make4u.example
                     </span>
                   </div>
                 </div>
