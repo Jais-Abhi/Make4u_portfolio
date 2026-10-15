@@ -159,19 +159,10 @@ export function Footer() {
               <div className="flex items-center gap-2 text-on-surface-variant">
                 <Mail className="h-4 w-4 text-primary-container" />
                 <a
-                  href="mailto:hello@make4u.example"
+                  href="mailto:make4udigitalsolutions@gmail.com"
                   className="hover:text-on-surface transition-colors"
                 >
-                  hello@make4u.example
-                </a>
-              </div>
-              <div className="flex items-center gap-2 text-on-surface-variant">
-                <MessageSquare className="h-4 w-4 text-primary-container" />
-                <a
-                  href="tel:+15550192834"
-                  className="hover:text-on-surface transition-colors"
-                >
-                  +1 (555) 019-2834
+                  make4udigitalsolutions@gmail.com
                 </a>
               </div>
             </div>

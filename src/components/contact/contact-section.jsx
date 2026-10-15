@@ -19,14 +19,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-const BUDGET_OPTIONS = [
-  { value: "<2k", label: "< $2,000" },
-  { value: "2k-5k", label: "$2k – $5k" },
-  { value: "5k-10k", label: "$5k – $10k" },
-  { value: "10k+", label: "$10,000+" },
-  { value: "retainer", label: "Monthly" },
-];
-
 const SERVICE_OPTIONS = [
   { value: "web-app", label: "Website & App Development" },
   { value: "app-development", label: "App Development" },
@@ -59,7 +51,6 @@ export function ContactSection() {
     workEmail: "",
     contactNumber: "",
     serviceSelect: initialService,
-    budget: "2k-5k",
     projectDetails: "",
   });
 
@@ -109,7 +100,6 @@ export function ContactSection() {
         workEmail: "",
         contactNumber: "",
         serviceSelect: "",
-        budget: "2k-5k",
         projectDetails: "",
       });
     }, 900);
@@ -135,13 +125,11 @@ export function ContactSection() {
             </div>
 
             <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight font-bold mt-2">
-              Let&apos;s build something{" "}
-              <span className="text-primary-container">remarkable</span> together.
+              Tell us about your project and we&apos;ll help you plan it clearly.
             </h1>
 
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mt-1">
-              Tell us about your project, timeline, and goals. We typically respond
-              within 4 hours with an actionable technical roadmap and transparent scope breakdown.
+              Share your goals, timeline, and requirements. We usually respond within a few hours with a practical next step.
             </p>
           </div>
         </section>
@@ -172,25 +160,21 @@ export function ContactSection() {
                   </div>
                   <div className="flex flex-col">
                     <span className="font-label-md text-label-md text-primary font-semibold">
-                      WhatsApp Direct
+                      WhatsApp
                     </span>
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
-                      Instant chat with lead engineers
+                      Quick chat with our team
                     </span>
                   </div>
                 </div>
 
-                <p className="font-label-md text-label-md text-primary font-mono tracking-wide pt-1">
-                  +1 (800) 967-5480
-                </p>
-
                 <a
-                  href="https://wa.me/18009675480"
+                  href="https://wa.me/917390813440?text=Hello%20Make4U%20Digital%20Solutions%2C%20I%20want%20to%20discuss%20my%20project."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-1 inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-primary-container text-on-primary-fixed font-label-md text-label-md rounded font-semibold hover:brightness-105 active:scale-[0.99] transition-all shadow-sm"
                 >
-                  <span>Open Instant Chat</span>
+                  <span>Chat on WhatsApp</span>
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>
@@ -203,13 +187,13 @@ export function ContactSection() {
                   </div>
                   <div className="flex flex-col">
                     <span className="font-label-md text-label-md text-primary font-semibold">
-                      Direct Inbox
+                      Email us
                     </span>
                     <a
-                      href="mailto:hello@make4udigital.com"
+                      href="mailto:make4udigitalsolutions@gmail.com"
                       className="font-body-sm text-body-sm text-primary-container hover:underline"
                     >
-                      hello@make4udigital.com
+                      make4udigitalsolutions@gmail.com
                     </a>
                   </div>
                 </div>
@@ -240,10 +224,10 @@ export function ContactSection() {
                     </span>
                   </div>
                   <p className="font-label-md text-label-md text-primary font-medium mt-1">
-                    Mon – Sat
+                    Mon – Sun
                   </p>
                   <p className="font-body-sm text-body-sm text-on-surface-variant leading-tight">
-                    9:00 AM – 7:00 PM EST
+                    9:00 AM – 10:00 PM IST
                   </p>
                 </div>
               </div>
@@ -376,10 +360,10 @@ export function ContactSection() {
               <div className="flex items-center justify-between pb-1 border-b border-outline-variant/40">
                 <div className="flex flex-col">
                   <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
-                    Project Inquiry Intake
+                    Tell us about your project
                   </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Fill in the fundamentals. We architect the solution.
+                    Share a few details and we&apos;ll guide the next step.
                   </p>
                 </div>
                 <span className="hidden sm:inline-flex items-center gap-1.5 font-label-sm text-label-sm text-primary-container bg-surface-container-low border border-outline-variant/50 px-3 py-1 rounded-full font-medium">
@@ -395,7 +379,7 @@ export function ContactSection() {
                     htmlFor="fullName"
                     className="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between"
                   >
-                    Full Name
+                    Full name
                     <span className="text-primary-container font-label-sm text-label-sm">*</span>
                   </label>
                   <input
@@ -405,7 +389,7 @@ export function ContactSection() {
                     required
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    placeholder="Jane Doe"
+                    placeholder="Jane deo"
                     className={`w-full bg-surface-container-lowest border ${
                       errors.fullName ? "border-red-500" : "border-outline-variant/60"
                     } text-primary placeholder-on-surface-variant/50 font-body-md text-body-md px-space-md py-3 rounded-lg transition-all outline-none focus:border-primary-container focus:bg-surface-container-high`}
@@ -420,7 +404,7 @@ export function ContactSection() {
                     htmlFor="workEmail"
                     className="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between"
                   >
-                    Work Email
+                    Email address
                     <span className="text-primary-container font-label-sm text-label-sm">*</span>
                   </label>
                   <input
@@ -430,7 +414,7 @@ export function ContactSection() {
                     required
                     value={formData.workEmail}
                     onChange={handleInputChange}
-                    placeholder="jane@enterprise.com"
+                    placeholder="jane@gmail.com"
                     className={`w-full bg-surface-container-lowest border ${
                       errors.workEmail ? "border-red-500" : "border-outline-variant/60"
                     } text-primary placeholder-on-surface-variant/50 font-body-md text-body-md px-space-md py-3 rounded-lg transition-all outline-none focus:border-primary-container focus:bg-surface-container-high`}
@@ -448,7 +432,7 @@ export function ContactSection() {
                     htmlFor="contactNumber"
                     className="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between"
                   >
-                    Phone or WhatsApp
+                    Phone / WhatsApp
                     <span className="font-label-sm text-label-sm text-on-surface-variant font-normal">
                       Optional
                     </span>
@@ -459,7 +443,7 @@ export function ContactSection() {
                     type="tel"
                     value={formData.contactNumber}
                     onChange={handleInputChange}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="Your mobile number"
                     className="w-full bg-surface-container-lowest border border-outline-variant/60 text-primary placeholder-on-surface-variant/50 font-body-md text-body-md px-space-md py-3 rounded-lg transition-all outline-none focus:border-primary-container focus:bg-surface-container-high"
                   />
                 </div>
@@ -469,7 +453,7 @@ export function ContactSection() {
                     htmlFor="serviceSelect"
                     className="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between"
                   >
-                    Primary Capability Needed
+                    Service you need
                     <span className="text-primary-container font-label-sm text-label-sm">*</span>
                   </label>
                   <div className="relative">
@@ -484,7 +468,7 @@ export function ContactSection() {
                       } text-primary font-body-md text-body-md px-space-md py-3 rounded-lg appearance-none cursor-pointer outline-none focus:border-primary-container focus:bg-surface-container-high pr-10`}
                     >
                       <option value="" disabled className="text-on-surface-variant">
-                        Select an engagement area...
+                        Choose a service
                       </option>
                       {SERVICE_OPTIONS.map((opt) => (
                         <option
@@ -504,40 +488,13 @@ export function ContactSection() {
                 </div>
               </div>
 
-              {/* Row 3: Budget Range Pill Selectors */}
-              <div className="flex flex-col gap-space-xs">
-                <label className="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between">
-                  Approximate Investment Range
-                  <span className="font-label-sm text-label-sm text-on-surface-variant font-normal">
-                    USD
-                  </span>
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 pt-1">
-                  {BUDGET_OPTIONS.map((b) => (
-                    <label key={b.value} className="cursor-pointer">
-                      <input
-                        type="radio"
-                        name="budget"
-                        value={b.value}
-                        checked={formData.budget === b.value}
-                        onChange={handleInputChange}
-                        className="peer sr-only"
-                      />
-                      <div className="h-11 px-2.5 rounded-lg border border-outline-variant/60 bg-surface-container-lowest text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-on-primary-fixed peer-checked:border-primary-container font-label-md text-label-md font-semibold flex items-center justify-center text-center transition-all hover:border-primary-container/60">
-                        {b.label}
-                      </div>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Row 4: Project Scope Textarea */}
+              {/* Row 3: Project Details */}
               <div className="flex flex-col gap-space-xs">
                 <label
                   htmlFor="projectDetails"
                   className="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between"
                 >
-                  Project Scope &amp; Target Launch
+                  Project details
                   <span className="text-primary-container font-label-sm text-label-sm">*</span>
                 </label>
                 <textarea
@@ -547,7 +504,7 @@ export function ContactSection() {
                   required
                   value={formData.projectDetails}
                   onChange={handleInputChange}
-                  placeholder="Tell us about your business goals, current challenges, technical stack expectations, and target launch date..."
+                  placeholder="Tell us what you want to build, your goals, timeline, and any important details..."
                   className={`w-full bg-surface-container-lowest border ${
                     errors.projectDetails ? "border-red-500" : "border-outline-variant/60"
                   } text-primary placeholder-on-surface-variant/50 font-body-md text-body-md p-space-md rounded-lg transition-all outline-none resize-y focus:border-primary-container focus:bg-surface-container-high`}
@@ -567,7 +524,7 @@ export function ContactSection() {
                   }`}
                 >
                   <span>
-                    {isSubmitting ? "Transmitting Scope..." : "Send Inquiry & Request Roadmap"}
+                    {isSubmitting ? "Sending your request..." : "Send project inquiry"}
                   </span>
                   <ArrowRight className="h-5 w-5" />
                 </button>

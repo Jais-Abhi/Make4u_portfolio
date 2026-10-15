@@ -56,7 +56,7 @@ export function ContactPreview() {
               </span>
 
               <a
-                href="mailto:hello@make4u.example"
+                href="mailto:make4udigitalsolutions@gmail.com"
                 className="flex items-center justify-between p-3 rounded bg-surface-container-high border border-outline-variant hover:border-primary-container transition-colors group"
               >
                 <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export function ContactPreview() {
                       Email Inquiry
                     </span>
                     <span className="font-body-sm text-body-sm text-primary font-medium">
-                      hello@make4u.example
+                      make4udigitalsolutions@gmail.com
                     </span>
                   </div>
                 </div>
@@ -74,17 +74,19 @@ export function ContactPreview() {
               </a>
 
               <a
-                href="tel:+15550192834"
+                href="https://wa.me/917390813440?text=Hello%20Make4U%20Digital%20Solutions%2C%20I%20need%20help%20with%20my%20project."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded bg-surface-container-high border border-outline-variant hover:border-primary-container transition-colors group"
               >
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-5 w-5 text-primary-container" />
                   <div className="flex flex-col">
                     <span className="font-label-sm text-label-sm text-on-surface-variant">
-                      WhatsApp &amp; Direct Line
+                      WhatsApp
                     </span>
                     <span className="font-body-sm text-body-sm text-primary font-medium">
-                      +1 (555) 019-2834
+                      Chat with our team
                     </span>
                   </div>
                 </div>

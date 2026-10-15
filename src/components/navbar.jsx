@@ -45,21 +45,25 @@ export function Navbar() {
     {
       title: "SEO & Digital Growth",
       description: "Search visibility and growth systems that drive demand.",
+      href: "/services/seo-digital-growth",
       icon: BarChart3,
     },
     {
       title: "Graphic Design & Video Editing",
       description: "Brand visuals and motion design for stronger engagement.",
+      href: "/services/graphic-design-video-editing",
       icon: Palette,
     },
     {
       title: "Photography & Videography",
       description: "Premium content for products, brands, and events.",
+      href: "/services/photography-videography",
       icon: Camera,
     },
     {
       title: "AI & Business Integration",
       description: "Automation that connects tools, leads, and support flows.",
+      href: "/services/ai-business-integration",
       icon: Bot,
     },
   ];

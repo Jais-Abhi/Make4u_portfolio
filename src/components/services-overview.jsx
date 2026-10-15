@@ -34,6 +34,7 @@ export function ServicesOverview() {
     {
       code: "03 / SEO",
       title: "SEO & Digital Growth",
+      href: "/services/seo-digital-growth",
       description:
         "Improve your search visibility and help more qualified buyers discover your business online.",
       feature: "High-intent conversion focus",
@@ -47,6 +48,7 @@ export function ServicesOverview() {
     {
       code: "04 / CREATIVE",
       title: "Graphic Design & Video Editing",
+      href: "/services/graphic-design-video-editing",
       description:
         "Create standout visuals, campaigns, and motion content that keep your brand memorable.",
       feature: "Brand-consistent assets",
@@ -60,6 +62,7 @@ export function ServicesOverview() {
     {
       code: "05 / MEDIA",
       title: "Photography & Videography",
+      href: "/services/photography-videography",
       description:
         "Capture polished product, brand, and event content that feels premium across every channel.",
       feature: "High-resolution capture",
@@ -73,6 +76,7 @@ export function ServicesOverview() {
     {
       code: "06 / AI & OPS",
       title: "AI & Business Integration",
+      href: "/services/ai-business-integration",
       description:
         "Connect CRM, chats, automations, and lead flows so your team works faster and smarter.",
       feature: "Automated customer routing",
