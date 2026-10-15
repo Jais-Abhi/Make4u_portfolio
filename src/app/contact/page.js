@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ContactSection } from "@/components/contact/contact-section";
 
 export const metadata = {
@@ -9,7 +10,9 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="flex w-full flex-col">
-      <ContactSection />
+      <Suspense fallback={null}>
+        <ContactSection />
+      </Suspense>
     </div>
   );
 }

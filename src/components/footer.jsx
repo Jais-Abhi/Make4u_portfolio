@@ -96,7 +96,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services"
+                  href="/services/website-development"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Website Development
@@ -105,7 +105,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-sm bg-primary-container"></span>
                 <Link
-                  href="/services"
+                  href="/services/app-development"
                   className="text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   App Development

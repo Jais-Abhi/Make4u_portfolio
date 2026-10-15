@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 export function WebsitePricing({ packages }) {
   return (
     <section id="pricing" className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
       <div className="max-w-2xl">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--primary-container)]">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C8F169]">
           Straightforward pricing
         </p>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[color:var(--primary)] md:text-4xl">
@@ -16,42 +16,48 @@ export function WebsitePricing({ packages }) {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 xl:grid-cols-3">
         {packages.map((plan) => (
           <div
             key={plan.id}
-            className={`rounded-[30px] border p-6 transition-all duration-200 ${
+            className={[
+              "relative rounded-[28px] border p-6",
               plan.featured
-                ? "border-[color:var(--primary-container)] bg-[color:var(--surface-container)] shadow-[0_18px_40px_rgba(200,241,105,0.08)]"
-                : "border-[color:var(--outline-variant)] bg-[color:var(--surface-container)]"
-            }`}
+                ? "border-[#C8F169] bg-[color:var(--surface-container)] shadow-[0_18px_45px_rgba(200,241,105,0.08)]"
+                : "border-[color:var(--outline-variant)] bg-[color:var(--surface-container)]",
+            ].join(" ")}
           >
+            {plan.featured && (
+              <div className="absolute -top-3 left-5 rounded-full bg-[#C8F169] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#151f00]">
+                Popular choice
+              </div>
+            )}
+
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xl font-semibold text-[color:var(--primary)]">{plan.name}</p>
-                <p className="mt-2 text-sm text-[color:var(--on-surface-variant)]">{plan.subtitle}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C8F169]">
+                  {plan.name}
+                </p>
+                <p className="mt-2 text-3xl font-semibold tracking-tight text-[color:var(--primary)]">
+                  {plan.price}
+                </p>
               </div>
 
               {plan.featured && (
-                <span className="inline-flex items-center rounded-full border border-[color:var(--primary-container)] bg-[color:var(--primary-container)]/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[color:var(--primary-container)]">
-                  Popular choice
+                <span className="rounded-full border border-[#C8F169]/50 bg-[#C8F169]/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#C8F169]">
+                  Best value
                 </span>
               )}
             </div>
 
-            <div className="mt-6">
-              <div className="text-4xl font-semibold tracking-tight text-[color:var(--primary)]">
-                {plan.price}
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
-                {plan.description}
-              </p>
-            </div>
+            <p className="mt-4 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
+              {plan.description}
+            </p>
 
             <ul className="mt-6 space-y-3">
               {plan.features.slice(0, 5).map((feature) => (
-                <li key={feature} className="flex items-start gap-2 text-sm text-[color:var(--on-surface)]">
-                  <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--primary-container)]/10 text-[color:var(--primary-container)]">
+                <li key={feature} className="flex items-start gap-3 text-sm text-[color:var(--on-surface)]">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C8F169]/12 text-[#C8F169]">
                     <Check className="h-3.5 w-3.5" />
                   </span>
                   <span>{feature}</span>
@@ -59,18 +65,19 @@ export function WebsitePricing({ packages }) {
               ))}
             </ul>
 
-            <div className="mt-6 rounded-2xl border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] p-3 text-sm text-[color:var(--on-surface-variant)]">
+            <div className="mt-6 rounded-2xl border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] p-3 text-sm leading-relaxed text-[color:var(--on-surface-variant)]">
               <span className="font-medium text-[color:var(--primary)]">Delivery:</span> {plan.timeline}
             </div>
 
             <div className="mt-6 flex flex-col gap-3">
               <Link
                 href={plan.href}
-                className={`inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-all ${
+                className={[
+                  "inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5",
                   plan.featured
-                    ? "bg-[color:var(--primary-container)] text-[color:var(--on-primary)] hover:-translate-y-0.5"
-                    : "border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] text-[color:var(--primary)] hover:border-[color:var(--primary-container)]"
-                }`}
+                    ? "bg-[#C8F169] text-[#151f00]"
+                    : "border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] text-[color:var(--primary)]",
+                ].join(" ")}
               >
                 {plan.cta}
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -78,7 +85,7 @@ export function WebsitePricing({ packages }) {
 
               <Link
                 href="#comparison"
-                className="inline-flex items-center justify-center text-sm font-medium text-[color:var(--primary-container)]"
+                className="inline-flex items-center justify-center text-sm font-medium text-[#C8F169]"
               >
                 View all features
               </Link>

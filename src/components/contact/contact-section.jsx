@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   MessageCircle,
   ArrowUpRight,
@@ -28,6 +29,7 @@ const BUDGET_OPTIONS = [
 
 const SERVICE_OPTIONS = [
   { value: "web-app", label: "Website & App Development" },
+  { value: "app-development", label: "App Development" },
   { value: "seo-growth", label: "SEO & Digital Growth" },
   { value: "design-video", label: "Graphic Design & Video Editing" },
   { value: "photo-video", label: "Photography & Videography" },
@@ -36,12 +38,27 @@ const SERVICE_OPTIONS = [
   { value: "custom", label: "Other / Custom Enterprise Scope" },
 ];
 
+const PACKAGE_TO_SERVICE = {
+  "website-development": "web-app",
+  "basic-website": "web-app",
+  "professional-website": "web-app",
+  "custom-website": "web-app",
+  "app-development": "app-development",
+  "basic-app": "app-development",
+  "professional-app": "app-development",
+  "custom-business-app": "app-development",
+};
+
 export function ContactSection() {
+  const searchParams = useSearchParams();
+  const requestedPackage = searchParams.get("package");
+  const initialService = PACKAGE_TO_SERVICE[requestedPackage] || "";
+
   const [formData, setFormData] = useState({
     fullName: "",
     workEmail: "",
     contactNumber: "",
-    serviceSelect: "",
+    serviceSelect: initialService,
     budget: "2k-5k",
     projectDetails: "",
   });

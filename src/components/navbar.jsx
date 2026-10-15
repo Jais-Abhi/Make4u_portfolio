@@ -33,11 +33,13 @@ export function Navbar() {
     {
       title: "Website Development",
       description: "Custom websites built to convert visitors into leads.",
+      href: "/services/website-development",
       icon: Globe,
     },
     {
       title: "App Development",
       description: "Smart business apps tailored to your workflows.",
+      href: "/services/app-development",
       icon: Smartphone,
     },
     {
@@ -135,7 +137,7 @@ export function Navbar() {
                     return (
                       <Link
                         key={service.title}
-                        href="/#services"
+                        href={service.href || "/#services"}
                         onClick={() => setServicesMenuOpen(false)}
                         className="group rounded-2xl border border-transparent bg-surface-container-low/80 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[color:var(--primary-container)] hover:bg-surface-container"
                       >
@@ -255,7 +257,7 @@ export function Navbar() {
                 {serviceOptions.map((service) => (
                   <Link
                     key={service.title}
-                    href="/#services"
+                    href={service.href || "/#services"}
                     onClick={() => {
                       setMobileMenuOpen(false);
                       setMobileServicesOpen(false);
