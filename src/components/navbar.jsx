@@ -3,20 +3,64 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import {
+  BarChart3,
+  Bot,
+  Camera,
+  ChevronDown,
+  Globe,
+  Menu,
+  Palette,
+  Smartphone,
+  X,
+} from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [servicesMenuOpen, setServicesMenuOpen] = React.useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
   const pathname = usePathname();
 
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
-  const isServices = pathname === "/services";
   const isMaintenance =
     pathname === "/maintenance-plans" ||
     pathname === "/services/maintenance-plans";
   const isContact = pathname === "/contact";
+
+  const serviceOptions = [
+    {
+      title: "Website Development",
+      description: "Custom websites built to convert visitors into leads.",
+      icon: Globe,
+    },
+    {
+      title: "App Development",
+      description: "Smart business apps tailored to your workflows.",
+      icon: Smartphone,
+    },
+    {
+      title: "SEO & Digital Growth",
+      description: "Search visibility and growth systems that drive demand.",
+      icon: BarChart3,
+    },
+    {
+      title: "Graphic Design & Video Editing",
+      description: "Brand visuals and motion design for stronger engagement.",
+      icon: Palette,
+    },
+    {
+      title: "Photography & Videography",
+      description: "Premium content for products, brands, and events.",
+      icon: Camera,
+    },
+    {
+      title: "AI & Business Integration",
+      description: "Automation that connects tools, leads, and support flows.",
+      icon: Bot,
+    },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant transition-colors duration-200">
@@ -62,16 +106,57 @@ export function Navbar() {
           >
             About
           </Link>
-          <Link
-            href="/services"
-            className={`transition-colors ${
-              isServices
-                ? "text-primary-container font-semibold"
-                : "text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg"
-            }`}
+          <div
+            className="relative hidden lg:block"
+            onMouseEnter={() => setServicesMenuOpen(true)}
+            onMouseLeave={() => setServicesMenuOpen(false)}
           >
-            Services
-          </Link>
+            <div className="flex items-center gap-1 px-2 py-3 text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors">
+              <button
+                type="button"
+                className="flex items-center gap-1"
+                aria-expanded={servicesMenuOpen}
+              >
+                Services
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    servicesMenuOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+            </div>
+
+            {servicesMenuOpen && (
+              <div className="absolute left-1/2 top-full z-50 mt-0 w-[700px] -translate-x-1/2 rounded-[28px] border border-outline-variant bg-surface-container/95 p-3 shadow-[0_18px_45px_rgba(18,29,22,0.18)] backdrop-blur-xl">
+                <div className="grid grid-cols-2 gap-2.5">
+                  {serviceOptions.map((service) => {
+                    const Icon = service.icon;
+
+                    return (
+                      <Link
+                        key={service.title}
+                        href="/#services"
+                        onClick={() => setServicesMenuOpen(false)}
+                        className="group rounded-2xl border border-transparent bg-surface-container-low/80 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[color:var(--primary-container)] hover:bg-surface-container"
+                      >
+                        <div className="mb-3 flex items-center gap-3">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-container/10 text-primary-container">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <div className="text-sm font-semibold text-primary group-hover:text-primary-container">
+                            {service.title}
+                          </div>
+                        </div>
+                        <p className="text-xs leading-relaxed text-on-surface-variant">
+                          {service.description}
+                        </p>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
           <Link
             href="/maintenance-plans"
             className={`transition-colors ${
@@ -151,17 +236,38 @@ export function Navbar() {
           >
             About
           </Link>
-          <Link
-            href="/services"
-            onClick={() => setMobileMenuOpen(false)}
-            className={`py-2 text-sm ${
-              isServices
-                ? "text-primary-container font-semibold"
-                : "text-on-surface-variant hover:text-on-surface font-medium"
-            }`}
-          >
-            Services
-          </Link>
+          <div className="py-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileServicesOpen((value) => !value)}
+              className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-sm text-on-surface-variant transition-colors hover:bg-surface-container hover:text-primary"
+            >
+              <span className="font-medium">Services</span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${
+                  mobileServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {mobileServicesOpen && (
+              <div className="mt-2 flex flex-col gap-1 overflow-hidden rounded-xl border border-outline-variant bg-surface-container/80 p-2">
+                {serviceOptions.map((service) => (
+                  <Link
+                    key={service.title}
+                    href="/#services"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="flex items-center justify-between rounded-lg px-2 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  >
+                    <span>{service.title}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <Link
             href="/maintenance-plans"
             onClick={() => setMobileMenuOpen(false)}

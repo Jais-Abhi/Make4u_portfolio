@@ -108,7 +108,7 @@ export function ServicesOverview() {
           {services.map((svc, idx) => (
             <Link
               key={idx}
-              href="/services"
+              href="/#services"
               className="service-card group relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[28px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-space-xl shadow-[0_18px_45px_rgba(18,29,22,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-[color:var(--primary-container)] hover:shadow-[0_25px_55px_rgba(35,92,57,0.18)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.22)]"
             >
               <div className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-br ${svc.accent}`} />
