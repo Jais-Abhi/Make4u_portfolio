@@ -144,10 +144,55 @@ body {
   }
 }
 
+.service-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 28%,
+    rgba(255, 255, 255, 0.5) 38%,
+    transparent 52%
+  );
+  transform: translateX(-130%) skewX(-14deg);
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  transform: translateX(130%) skewX(-14deg);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-section,
   .hero-section *,
-  .marquee-track {
+  .marquee-track,
+  .service-card,
+  .service-card::before,
+  .service-card::after {
     scroll-behavior: auto !important;
     animation: none !important;
     transition-duration: 0.01ms !important;
