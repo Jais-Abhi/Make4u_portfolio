@@ -11,6 +11,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import { ContactSuccessModal } from "./contact/contact-success-modal";
 
 export function ContactPreview() {
   const [formData, setFormData] = React.useState({
@@ -22,6 +23,7 @@ export function ContactPreview() {
   });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
+  const [showSuccessModal, setShowSuccessModal] = React.useState(false);
   const [error, setError] = React.useState(null);
 
   const handleInputChange = (field, value) => {
@@ -59,6 +61,7 @@ export function ContactPreview() {
       }
 
       setSubmitted(true);
+      setShowSuccessModal(true);
       setFormData({
         name: "",
         email: "",
@@ -351,13 +354,23 @@ export function ContactPreview() {
                 {submitted && (
                   <div
                     id="form-feedback"
-                    className="p-4 rounded bg-surface-container-high border border-primary-container/60 flex items-center gap-3 animate-in fade-in"
+                    onClick={() => setShowSuccessModal(true)}
+                    className="p-4 rounded bg-surface-container-high border border-primary-container/60 flex items-center justify-between gap-3 animate-in fade-in cursor-pointer hover:border-primary-container transition-all"
                   >
-                    <CheckCircle2 className="h-5 w-5 text-primary-container shrink-0" />
-                    <p className="font-body-sm text-body-sm text-primary">
-                      Thank you. Your message has been received and our
-                      technical lead will follow up shortly.
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary-container shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md text-primary font-semibold">
+                          Inquiry Dispatch Logged
+                        </span>
+                        <p className="font-body-sm text-body-sm text-on-surface-variant">
+                          Our team has been notified. You will receive an acknowledgment receipt within minutes.
+                        </p>
+                      </div>
+                    </div>
+                    <span className="hidden sm:inline-block text-xs font-semibold text-primary-container shrink-0 underline">
+                      View Confirmation
+                    </span>
                   </div>
                 )}
 
@@ -377,6 +390,11 @@ export function ContactPreview() {
           </div>
         </div>
       </div>
+
+      <ContactSuccessModal
+        isOpen={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+      />
     </section>
   );
 }

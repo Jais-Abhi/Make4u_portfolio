@@ -5,7 +5,7 @@ export function WebsitePricing({ packages }) {
   return (
     <section id="pricing" className="mx-auto max-w-7xl px-gutter py-12 md:py-20">
       <div className="max-w-2xl">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#C8F169] sm:text-[10px]">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169] sm:text-[10px]">
           Straightforward pricing
         </p>
         <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--primary)] sm:text-3xl md:text-4xl">
@@ -23,19 +23,19 @@ export function WebsitePricing({ packages }) {
             className={[
               "relative rounded-[24px] border p-4 sm:rounded-[28px] sm:p-6",
               plan.featured
-                ? "border-[#C8F169] bg-[color:var(--surface-container)] shadow-[0_18px_45px_rgba(200,241,105,0.08)]"
+                ? "border-[#2d4d12] dark:border-[#C8F169] bg-[color:var(--surface-container)] shadow-[0_18px_45px_rgba(45,77,18,0.12)] dark:shadow-[0_18px_45px_rgba(200,241,105,0.08)]"
                 : "border-[color:var(--outline-variant)] bg-[color:var(--surface-container)]",
             ].join(" ")}
           >
             {plan.featured && (
-              <div className="absolute -top-3 left-5 rounded-full bg-[#C8F169] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#151f00]">
+              <div className="absolute -top-3 left-5 rounded-full bg-[#2d4d12] text-white dark:bg-[#C8F169] dark:text-[#151f00] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em]">
                 Popular choice
               </div>
             )}
 
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C8F169]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169]">
                   {plan.name}
                 </p>
                 <p className="mt-2 text-3xl font-semibold tracking-tight text-[color:var(--primary)]">
@@ -44,7 +44,7 @@ export function WebsitePricing({ packages }) {
               </div>
 
               {plan.featured && (
-                <span className="rounded-full border border-[#C8F169]/50 bg-[#C8F169]/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#C8F169]">
+                <span className="rounded-full border border-[#2d4d12]/50 bg-[#2d4d12]/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:border-[#C8F169]/50 dark:bg-[#C8F169]/10 dark:text-[#C8F169]">
                   Best value
                 </span>
               )}
@@ -57,8 +57,8 @@ export function WebsitePricing({ packages }) {
             <ul className="mt-6 space-y-3">
               {plan.features.slice(0, 5).map((feature) => (
                 <li key={feature} className="flex items-start gap-3 text-sm text-[color:var(--on-surface)]">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C8F169]/12 text-[#C8F169]">
-                    <Check className="h-3.5 w-3.5" />
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
+                    <Check className="h-3.5 w-3.5 stroke-[3]" />
                   </span>
                   <span>{feature}</span>
                 </li>
@@ -75,8 +75,8 @@ export function WebsitePricing({ packages }) {
                 className={[
                   "inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5",
                   plan.featured
-                    ? "bg-[#C8F169] text-[#151f00]"
-                    : "border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] text-[color:var(--primary)]",
+                    ? "bg-[#2d4d12] text-white shadow-[0_12px_24px_rgba(45,77,18,0.18)] dark:bg-[#C8F169] dark:text-[#151f00] dark:shadow-[0_12px_24px_rgba(200,241,105,0.18)]"
+                    : "border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] text-[color:var(--primary)] hover:border-[#2d4d12] hover:text-[#2d4d12] dark:hover:border-[#C8F169] dark:hover:text-[#C8F169]",
                 ].join(" ")}
               >
                 {plan.cta}
@@ -85,7 +85,7 @@ export function WebsitePricing({ packages }) {
 
               <Link
                 href="#comparison"
-                className="inline-flex items-center justify-center text-sm font-medium text-[#C8F169]"
+                className="inline-flex items-center justify-center text-sm font-semibold text-[#2d4d12] hover:underline dark:text-[#C8F169]"
               >
                 View all features
               </Link>

@@ -9,7 +9,7 @@ export function WebsiteFAQs({ items }) {
   return (
     <section className="mx-auto max-w-5xl px-gutter py-12 md:py-20">
       <div className="max-w-2xl">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[color:var(--primary-container)] sm:text-[10px]">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:text-[#C8F169] sm:text-[10px]">
           Frequently asked questions
         </p>
         <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--primary)] sm:text-3xl md:text-4xl">
@@ -35,7 +35,7 @@ export function WebsiteFAQs({ items }) {
               >
                 <span className="text-sm font-medium text-[color:var(--primary)] sm:text-base">{item.question}</span>
                 <ChevronDown
-                  className={`h-4 w-4 shrink-0 text-[color:var(--primary-container)] transition-transform duration-200 sm:h-5 sm:w-5 ${
+                  className={`h-4 w-4 shrink-0 text-[#2d4d12] dark:text-[#C8F169] transition-transform duration-200 sm:h-5 sm:w-5 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                 />

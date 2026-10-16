@@ -30,7 +30,7 @@ export function WebsiteFeatures({ items }) {
     <section className="overflow-x-hidden border-y border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)]/60">
       <div className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--primary-container)]">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:text-[#C8F169]">
             Built for your business
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[color:var(--primary)] md:text-4xl">
@@ -48,7 +48,7 @@ export function WebsiteFeatures({ items }) {
                 className="min-w-0 rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5"
               >
                 <div className="mb-4 flex min-w-0 items-start gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[color:var(--primary-container)]/10 text-[color:var(--primary-container)]">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="min-w-0 flex-1 text-base font-semibold leading-snug text-[color:var(--primary)] break-words">

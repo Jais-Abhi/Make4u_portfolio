@@ -50,7 +50,7 @@ export default function WebsiteDevelopmentPage() {
 
       <section className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--primary-container)]">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:text-[#C8F169]">
             Every website starts with the essentials
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[color:var(--primary)] md:text-4xl">
@@ -61,8 +61,8 @@ export default function WebsiteDevelopmentPage() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {websiteEssentials.map((item) => (
             <div key={item} className="flex items-start gap-3 rounded-[20px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-4">
-              <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[color:var(--primary-container)]/10 text-[color:var(--primary-container)]">
-                <Check className="h-3.5 w-3.5" />
+              <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
+                <Check className="h-3.5 w-3.5 stroke-[3]" />
               </span>
               <span className="text-sm leading-relaxed text-[color:var(--on-surface)]">{item}</span>
             </div>
@@ -73,7 +73,7 @@ export default function WebsiteDevelopmentPage() {
       <section className="border-y border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)]/80">
         <div className="mx-auto max-w-7xl px-gutter py-16 md:py-20">
           <div className="max-w-2xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--primary-container)]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:text-[#C8F169]">
               No hidden surprises
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[color:var(--primary)] md:text-4xl">
@@ -85,7 +85,7 @@ export default function WebsiteDevelopmentPage() {
             {additionalCosts.map((item) => (
               <div key={item.title} className="min-w-0 rounded-[24px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-5">
                 <div className="mb-4 flex min-w-0 items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--primary-container)]/10 text-[color:var(--primary-container)]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#2d4d12]/12 text-[#2d4d12] dark:bg-[#C8F169]/12 dark:text-[#C8F169]">
                     <ShieldCheck className="h-5 w-5" />
                   </div>
                   <h3 className="min-w-0 flex-1 text-base font-semibold leading-snug text-[color:var(--primary)] break-words md:text-lg">
@@ -108,7 +108,7 @@ export default function WebsiteDevelopmentPage() {
         <div className="rounded-[32px] border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] p-8 md:p-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--primary-container)]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2d4d12] dark:text-[#C8F169]">
                 Ready to build your business website?
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[color:var(--primary)] md:text-4xl">
@@ -122,7 +122,7 @@ export default function WebsiteDevelopmentPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact?package=website-development"
-                className="inline-flex items-center justify-center rounded-lg bg-[color:var(--primary-container)] px-5 py-3 text-sm font-semibold text-[color:var(--on-primary)] transition-transform duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-lg bg-[#2d4d12] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(45,77,18,0.18)] transition-transform duration-200 hover:-translate-y-0.5 dark:bg-[#C8F169] dark:text-[#151f00] dark:shadow-[0_12px_24px_rgba(200,241,105,0.18)]"
               >
                 Get a Free Quote
               </Link>
@@ -131,7 +131,7 @@ export default function WebsiteDevelopmentPage() {
                 href="https://wa.me/15550192834"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] px-5 py-3 text-sm font-semibold text-[color:var(--primary)] transition-colors hover:border-[color:var(--primary-container)] hover:text-[color:var(--primary-container)]"
+                className="inline-flex items-center justify-center rounded-lg border border-[color:var(--outline-variant)] bg-[color:var(--surface-container-low)] px-5 py-3 text-sm font-semibold text-[color:var(--primary)] transition-colors hover:border-[#2d4d12] hover:text-[#2d4d12] dark:hover:border-[#C8F169] dark:hover:text-[#C8F169]"
               >
                 Chat on WhatsApp
               </a>
@@ -139,7 +139,7 @@ export default function WebsiteDevelopmentPage() {
           </div>
 
           <div className="mt-8 flex items-center gap-2 text-sm text-[color:var(--on-surface-variant)]">
-            <Sparkles className="h-4 w-4 text-[color:var(--primary-container)]" />
+            <Sparkles className="h-4 w-4 text-[#2d4d12] dark:text-[#C8F169]" />
             <span>Click. Connect. Convert.</span>
           </div>
         </div>

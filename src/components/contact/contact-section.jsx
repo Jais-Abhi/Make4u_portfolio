@@ -19,6 +19,7 @@ import {
   Zap,
   ChevronDown,
 } from "lucide-react";
+import { ContactSuccessModal } from "./contact-success-modal";
 
 const SERVICE_OPTIONS = [
   { value: "web-app", label: "Website & App Development" },
@@ -58,6 +59,7 @@ export function ContactSection() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [submitError, setSubmitError] = useState(null);
 
   const handleInputChange = (e) => {
@@ -122,6 +124,7 @@ export function ContactSection() {
       }
 
       setIsSubmitted(true);
+      setShowSuccessModal(true);
       setFormData({
         fullName: "",
         workEmail: "",
@@ -570,16 +573,24 @@ export function ContactSection() {
 
               {/* Interactive Inline Notification Box */}
               {isSubmitted && (
-                <div className="bg-surface-container-low border border-primary-container/40 p-space-md rounded-lg flex items-center gap-space-md animate-in fade-in duration-300">
-                  <CheckCircle2 className="h-6 w-6 text-primary-container shrink-0" />
-                  <div className="flex flex-col">
-                    <span className="font-label-md text-label-md text-primary font-semibold">
-                      Inquiry Dispatch Logged
-                    </span>
-                    <span className="font-body-sm text-body-sm text-on-surface-variant">
-                      Our team has been notified. You will receive an acknowledgment receipt within minutes.
-                    </span>
+                <div
+                  onClick={() => setShowSuccessModal(true)}
+                  className="bg-surface-container-low border border-primary-container/40 p-space-md rounded-lg flex items-center justify-between gap-space-md animate-in fade-in duration-300 cursor-pointer hover:border-primary-container/80 transition-all"
+                >
+                  <div className="flex items-center gap-space-md">
+                    <CheckCircle2 className="h-6 w-6 text-primary-container shrink-0" />
+                    <div className="flex flex-col">
+                      <span className="font-label-md text-label-md text-primary font-semibold">
+                        Inquiry Dispatch Logged
+                      </span>
+                      <span className="font-body-sm text-body-sm text-on-surface-variant">
+                        Our team has been notified. You will receive an acknowledgment receipt within minutes.
+                      </span>
+                    </div>
                   </div>
+                  <span className="hidden sm:inline-block text-xs font-semibold text-primary-container shrink-0 underline">
+                    View Confirmation
+                  </span>
                 </div>
               )}
 
@@ -729,6 +740,11 @@ export function ContactSection() {
           </div>
         </div>
       </section>
+
+      <ContactSuccessModal
+        isOpen={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+      />
     </div>
   );
 }

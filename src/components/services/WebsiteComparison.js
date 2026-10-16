@@ -40,7 +40,7 @@ export function WebsiteComparison({ groups }) {
   return (
     <section id="comparison" className="mx-auto max-w-7xl px-gutter py-12 md:py-20">
       <div className="max-w-2xl">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#C8F169] sm:text-[10px]">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#2d4d12] dark:text-[#C8F169] sm:text-[10px]">
           Compare every feature
         </p>
         <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[color:var(--primary)] sm:text-3xl md:text-4xl">
@@ -87,7 +87,7 @@ export function WebsiteComparison({ groups }) {
       <div className="mt-8 text-center">
         <a
           href="/contact?package=website-development"
-          className="inline-flex items-center justify-center rounded-lg border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] px-5 py-3 text-sm font-semibold text-[color:var(--primary)] transition-colors hover:border-[#C8F169] hover:text-[#C8F169]"
+          className="inline-flex items-center justify-center rounded-lg border border-[color:var(--outline-variant)] bg-[color:var(--surface-container)] px-5 py-3 text-sm font-semibold text-[color:var(--primary)] transition-colors hover:border-[#2d4d12] hover:text-[#2d4d12] dark:hover:border-[#C8F169] dark:hover:text-[#C8F169]"
         >
           Not Sure Which Plan Fits? Talk to Us.
         </a>
