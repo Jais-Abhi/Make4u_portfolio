@@ -12,6 +12,7 @@ import {
   Lock,
   ArrowRight,
   CheckCircle2,
+  AlertCircle,
   Search,
   Headphones,
   Rocket,
@@ -57,12 +58,16 @@ export function ContactSection() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: null }));
+    }
+    if (submitError) {
+      setSubmitError(null);
     }
   };
 
@@ -86,14 +91,36 @@ export function ContactSection() {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
+    setIsSubmitted(false);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.workEmail,
+          phone: formData.contactNumber,
+          service: formData.serviceSelect,
+          details: formData.projectDetails,
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || !data?.success) {
+        throw new Error(data?.error || "Failed to submit inquiry. Please try again.");
+      }
+
       setIsSubmitted(true);
       setFormData({
         fullName: "",
@@ -102,7 +129,11 @@ export function ContactSection() {
         serviceSelect: "",
         projectDetails: "",
       });
-    }, 900);
+    } catch (err) {
+      setSubmitError(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -547,6 +578,20 @@ export function ContactSection() {
                     </span>
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
                       Our team has been notified. You will receive an acknowledgment receipt within minutes.
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {submitError && (
+                <div className="bg-surface-container-low border border-red-500/40 p-space-md rounded-lg flex items-center gap-space-md animate-in fade-in duration-300">
+                  <AlertCircle className="h-6 w-6 text-red-500 shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="font-label-md text-label-md text-red-400 font-semibold">
+                      Submission Failed
+                    </span>
+                    <span className="font-body-sm text-body-sm text-on-surface-variant">
+                      {submitError}
                     </span>
                   </div>
                 </div>
