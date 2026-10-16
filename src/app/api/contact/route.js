@@ -10,6 +10,12 @@ const SERVICE_LABELS = {
   "ai-automation": "AI & Business Automation",
   "subscription": "Monthly Subscription Plan",
   "custom": "Other / Custom Enterprise Scope",
+  "web": "Website & App Development",
+  "app": "App Development",
+  "seo": "SEO & Digital Growth",
+  "design": "Graphic Design & Video Editing",
+  "media": "Photography & Videography",
+  "ai": "AI & Business Automation",
 };
 
 function validatePayload(body) {

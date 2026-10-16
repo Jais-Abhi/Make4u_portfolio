@@ -8,20 +8,69 @@ import {
   BadgeCheck,
   ChevronDown,
   CheckCircle2,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 
 export function ContactPreview() {
-  const [submitted, setSubmitted] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
+    phone: "",
     service: "",
     description: "",
   });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    if (error) setError(null);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setError(null);
+    setSubmitted(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          details: formData.description,
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || !data?.success) {
+        throw new Error(data?.error || "Failed to submit inquiry. Please try again.");
+      }
+
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        description: "",
+      });
+    } catch (err) {
+      setError(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -111,6 +160,7 @@ export function ContactPreview() {
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-space-md"
               >
+                {/* Row 1: Full Name & Email Address */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
                   {/* Full Name */}
                   <div className="flex flex-col gap-2">
@@ -127,9 +177,7 @@ export function ContactPreview() {
                       required
                       placeholder="Alex Mercer"
                       value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                      onChange={(e) => handleInputChange("name", e.target.value)}
                       className="w-full h-12 px-4 rounded bg-surface-container-high border border-outline-variant text-primary font-body-sm text-body-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
                     />
                   </div>
@@ -149,78 +197,112 @@ export function ContactPreview() {
                       required
                       placeholder="alex@company.com"
                       value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
+                      onChange={(e) => handleInputChange("email", e.target.value)}
                       className="w-full h-12 px-4 rounded bg-surface-container-high border border-outline-variant text-primary font-body-sm text-body-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
                     />
                   </div>
                 </div>
 
-                {/* Service Required */}
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="contact-service"
-                    className="font-label-md text-label-md text-primary font-medium"
-                  >
-                    Service Required{" "}
-                    <span className="text-primary-container">*</span>
-                  </label>
-                  <div className="relative">
-                    <select
-                      id="contact-service"
-                      required
-                      value={formData.service}
-                      onChange={(e) =>
-                        setFormData({ ...formData, service: e.target.value })
-                      }
-                      className="w-full h-12 px-4 rounded bg-surface-container-high border border-outline-variant text-primary font-body-sm text-body-sm appearance-none focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                {/* Row 2: Phone / Contact Number & Service Required */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  {/* Phone / Contact Number */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                      <label
+                        htmlFor="contact-phone"
+                        className="font-label-md text-label-md text-primary font-medium"
+                      >
+                        Phone / WhatsApp
+                      </label>
+                      <span className="font-label-sm text-label-sm text-on-surface-variant font-normal">
+                        Optional
+                      </span>
+                    </div>
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      className="w-full h-12 px-4 rounded bg-surface-container-high border border-outline-variant text-primary font-body-sm text-body-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                    />
+                  </div>
+
+                  {/* Service Required */}
+                  <div className="flex flex-col gap-2">
+                    <label
+                      htmlFor="contact-service"
+                      className="font-label-md text-label-md text-primary font-medium"
                     >
-                      <option
-                        value=""
-                        disabled
-                        className="bg-surface-container text-on-surface-variant"
+                      Service Required{" "}
+                      <span className="text-primary-container">*</span>
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="contact-service"
+                        required
+                        value={formData.service}
+                        onChange={(e) => handleInputChange("service", e.target.value)}
+                        className="w-full h-12 px-4 rounded bg-surface-container-high border border-outline-variant text-primary font-body-sm text-body-sm appearance-none focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
                       >
-                        Select a service discipline...
-                      </option>
-                      <option
-                        value="web"
-                        className="bg-surface-container text-primary"
-                      >
-                        Website Development
-                      </option>
-                      <option
-                        value="app"
-                        className="bg-surface-container text-primary"
-                      >
-                        App Development
-                      </option>
-                      <option
-                        value="seo"
-                        className="bg-surface-container text-primary"
-                      >
-                        SEO &amp; Digital Growth
-                      </option>
-                      <option
-                        value="design"
-                        className="bg-surface-container text-primary"
-                      >
-                        Graphic Design &amp; Video Editing
-                      </option>
-                      <option
-                        value="media"
-                        className="bg-surface-container text-primary"
-                      >
-                        Photography &amp; Videography
-                      </option>
-                      <option
-                        value="ai"
-                        className="bg-surface-container text-primary"
-                      >
-                        AI &amp; Business Integration
-                      </option>
-                    </select>
-                    <ChevronDown className="absolute right-4 top-3.5 pointer-events-none text-outline h-5 w-5" />
+                        <option
+                          value=""
+                          disabled
+                          className="bg-surface-container text-on-surface-variant"
+                        >
+                          Select a service discipline...
+                        </option>
+                        <option
+                          value="web-app"
+                          className="bg-surface-container text-primary"
+                        >
+                          Website &amp; App Development
+                        </option>
+                        <option
+                          value="app-development"
+                          className="bg-surface-container text-primary"
+                        >
+                          App Development
+                        </option>
+                        <option
+                          value="seo-growth"
+                          className="bg-surface-container text-primary"
+                        >
+                          SEO &amp; Digital Growth
+                        </option>
+                        <option
+                          value="design-video"
+                          className="bg-surface-container text-primary"
+                        >
+                          Graphic Design &amp; Video Editing
+                        </option>
+                        <option
+                          value="photo-video"
+                          className="bg-surface-container text-primary"
+                        >
+                          Photography &amp; Videography
+                        </option>
+                        <option
+                          value="ai-automation"
+                          className="bg-surface-container text-primary"
+                        >
+                          AI &amp; Business Automation
+                        </option>
+                        <option
+                          value="subscription"
+                          className="bg-surface-container text-primary"
+                        >
+                          Monthly Subscription Plan
+                        </option>
+                        <option
+                          value="custom"
+                          className="bg-surface-container text-primary"
+                        >
+                          Other / Custom Enterprise Scope
+                        </option>
+                      </select>
+                      <ChevronDown className="absolute right-4 top-3.5 pointer-events-none text-outline h-5 w-5" />
+                    </div>
                   </div>
                 </div>
 
@@ -239,9 +321,7 @@ export function ContactPreview() {
                     required
                     placeholder="Briefly outline your goals, timeline, or current bottlenecks..."
                     value={formData.description}
-                    onChange={(e) =>
-                      setFormData({ ...formData, description: e.target.value })
-                    }
+                    onChange={(e) => handleInputChange("description", e.target.value)}
                     className="w-full p-4 rounded bg-surface-container-high border border-outline-variant text-primary font-body-sm text-body-sm placeholder:text-on-surface-variant/40 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container resize-none transition-all"
                   />
                 </div>
@@ -250,9 +330,20 @@ export function ContactPreview() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:brightness-105 active:scale-95 transition-all shadow-md"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold hover:brightness-105 active:scale-95 transition-all shadow-md disabled:opacity-75 disabled:cursor-not-allowed"
                   >
-                    Let&apos;s Talk <ArrowUpRight className="h-4 w-4" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <span>Sending inquiry...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Let&apos;s Talk</span>
+                        <ArrowUpRight className="h-4 w-4" />
+                      </>
+                    )}
                   </button>
                 </div>
 
@@ -266,6 +357,18 @@ export function ContactPreview() {
                     <p className="font-body-sm text-body-sm text-primary">
                       Thank you. Your message has been received and our
                       technical lead will follow up shortly.
+                    </p>
+                  </div>
+                )}
+
+                {/* Error Notification Feedback */}
+                {error && (
+                  <div
+                    className="p-4 rounded bg-surface-container-high border border-red-500/60 flex items-center gap-3 animate-in fade-in"
+                  >
+                    <AlertCircle className="h-5 w-5 text-red-500 shrink-0" />
+                    <p className="font-body-sm text-body-sm text-red-400">
+                      {error}
                     </p>
                   </div>
                 )}
